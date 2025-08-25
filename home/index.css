@@ -1,0 +1,385 @@
+/* =================================================================== */
+/* CSS Final - Portal Corporativo de Rondônia                          */
+/* =================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+:root {
+  --cor-azul-ro-viva: #007bff;
+  --cor-verde-ro-viva: #28a745;
+  --cor-amarelo-ro-viva: #ffc107;
+  --cor-azul-escuro: #002b4f;
+  --cor-branco: #ffffff;
+  --cor-texto-principal: #343a40;
+  --sombra-padrao: 0 8px 30px rgba(0, 0, 0, 0.1);
+  /* <<<<< CONTROLE AQUI >>>>> Altere este valor para escalar o site. */
+  --escala-base: 140%;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { font-size: var(--escala-base); }
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--cor-branco);
+  color: var(--cor-texto-principal);
+  overflow-x: hidden;
+}
+
+.container {
+  width: 90%;
+  margin: 0 auto;
+}
+
+/* ---------------------------------- HEADER ---------------------------------- */
+.site-header {
+  background-color: var(--cor-branco);
+  width: 100%;
+  padding: 1.5rem 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  transition: all 0.4s ease;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.site-header.scrolled {
+  padding: 1rem 0;
+  background-color: rgba(255, 255, 255, 0.85);
+  backdrop-filter: saturate(180%) blur(20px);
+  box-shadow: var(--sombra-padrao);
+}
+
+.header-content {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 2rem;
+}
+
+.branding { display: flex; align-items: center; text-decoration: none; }
+.branding img { height: 85px; }
+.branding-text { margin-left: 1.5rem; }
+.branding .state-name { font-size: 2rem; font-weight: 700; color: var(--cor-azul-escuro); }
+.branding .state-slogan { font-size: 1.1rem; color: #6c757d; }
+
+.main-navigation { justify-self: center; }
+.main-navigation ul { list-style: none; display: flex; gap: 3.5rem; }
+.main-navigation a {
+  text-decoration: none; color: #495057; font-weight: 600; font-size: 1.2rem;
+  position: relative; padding: 0.5rem 0; transition: color 0.3s ease;
+}
+.main-navigation a:hover { color: var(--cor-azul-ro-viva); }
+.main-navigation a::after {
+  content: ''; position: absolute; bottom: 0; left: 0;
+  width: 0; height: 3px; background-color: var(--cor-azul-ro-viva);
+  transition: width 0.4s ease;
+}
+.main-navigation a:hover::after { width: 100%; }
+
+.header-actions { display: flex; align-items: center; gap: 2rem; justify-self: end; }
+.search-toggle {
+  background: none; border: none; cursor: pointer;
+  font-size: 2rem; color: #6c757d;
+}
+.button-primary {
+  background-color: var(--cor-azul-ro-viva); color: var(--cor-branco);
+  font-size: 1.1rem; font-weight: 600; text-decoration: none;
+  padding: 1rem 2.2rem; border-radius: 50px;
+  transition: all 0.3s ease; white-space: nowrap;
+}
+.button-primary:hover { background-color: #0069d9; transform: translateY(-3px); }
+
+/* ---------------------------------- CONTEÚDO PRINCIPAL ---------------------------------- */
+.main-content {
+  padding-top: 180px; /* Espaço para o header fixo */
+}
+
+.section-title {
+  font-size: 3rem; font-weight: 700; color: var(--cor-azul-escuro);
+  text-align: center; margin-bottom: 4rem;
+  position: relative; padding-bottom: 1.5rem;
+}
+.section-title::after {
+  content: ''; position: absolute; bottom: 0; left: 50%;
+  transform: translateX(-50%); width: 120px; height: 5px;
+  background-color: var(--cor-amarelo-ro-viva);
+}
+
+/* HERO SECTION */
+.hero-section {
+  position: relative; display: flex; align-items: center; justify-content: center;
+  text-align: center; color: var(--cor-branco);
+  background-image: url('https://source.unsplash.com/random/1920x1080?river,amazonia');
+  background-size: cover; background-position: center; padding: 8rem 0;
+}
+.hero-overlay {
+  position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+  background: linear-gradient(45deg, rgba(40, 167, 69, 0.8), rgba(0, 123, 255, 0.8));
+}
+.hero-content { position: relative; z-index: 2; }
+.hero-section h1 { font-size: 4.5rem; font-weight: 700; }
+.hero-section p { font-size: 1.8rem; max-width: 900px; margin: 1rem auto 3rem auto; }
+
+.unified-search { display: flex; max-width: 800px; margin: 0 auto; border-radius: 50px; }
+.unified-search input {
+  flex-grow: 1; border: none; padding: 1.5rem 2rem;
+  font-size: 1.2rem; border-radius: 50px 0 0 50px; outline: none;
+}
+.unified-search button {
+  border: none; background-color: var(--cor-amarelo-ro-viva);
+  color: var(--cor-azul-escuro); padding: 0 3rem; font-size: 1.2rem;
+  font-weight: 600; cursor: pointer; border-radius: 0 50px 50px 0;
+}
+
+/* CORE SERVICES */
+.core-services { padding: 6rem 0; background-color: #f8f9fa; }
+.services-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2.5rem; }
+.service-card {
+  background-color: var(--cor-branco); padding: 3rem; text-align: center;
+  border-radius: 10px; border: 1px solid #e9ecef;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  transition: all 0.3s ease; text-decoration: none; color: var(--cor-texto-principal);
+}
+.service-card:hover {
+  transform: translateY(-12px); box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+  border-color: var(--cor-verde-ro-viva);
+}
+.service-card .card-icon { font-size: 5rem; color: var(--cor-azul-ro-viva); margin-bottom: 2rem; }
+.service-card .card-title { font-size: 1.8rem; font-weight: 600; margin-bottom: 1rem; }
+.service-card .card-description { font-size: 1.1rem; color: #6c757d; }
+
+/* NEWS SECTION */
+.news-section { padding: 6rem 0; }
+.news-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2.5rem; }
+.news-card {
+  background: var(--cor-branco); border-radius: 10px;
+  box-shadow: var(--sombra-padrao); overflow: hidden;
+  transition: transform 0.3s ease;
+}
+.news-card:hover { transform: translateY(-12px); }
+.news-image { width: 100%; height: 300px; object-fit: cover; }
+.news-content { padding: 2rem; }
+.news-category {
+  background-color: var(--cor-verde-ro-viva); color: var(--cor-branco);
+  padding: 0.5rem 1rem; border-radius: 50px; font-size: 0.9rem;
+  font-weight: 600; margin-bottom: 1rem; display: inline-block;
+}
+.news-title { font-size: 1.5rem; font-weight: 600; margin-bottom: 1.5rem; }
+.news-readmore { color: var(--cor-azul-ro-viva); font-weight: 600; text-decoration: none; }
+.news-readmore i { transition: transform 0.3s ease; }
+.news-card:hover .news-readmore i { transform: translateX(5px); }
+
+/* ---------------------------------- FOOTER ---------------------------------- */
+.site-footer-bottom {
+  background-color: var(--cor-azul-escuro);
+  color: #aeb8c2;
+  padding: 2.5rem 0;
+  text-align: center;
+  font-size: 1rem;
+}
+
+/* ---------------------------------- RESPONSIVIDADE ---------------------------------- */
+.mobile-nav-toggle { display: none; }
+.mobile-navigation { display: none; }
+
+@media (max-width: 1400px) {
+    .main-navigation { display: none; }
+    .mobile-nav-toggle {
+        display: flex; flex-direction: column; justify-content: space-around;
+        width: 40px; height: 35px; background: transparent; border: none; cursor: pointer;
+    }
+    .hamburger-line { width: 100%; height: 4px; background-color: var(--cor-azul-escuro); border-radius: 5px; }
+}
+
+@media (max-width: 1200px) {
+    .services-grid { grid-template-columns: repeat(2, 1fr); }
+    .news-grid { grid-template-columns: repeat(1, 1fr); max-width: 700px; margin: 0 auto; }
+}
+
+@media (max-width: 768px) {
+    .main-content { padding-top: 140px; }
+    .branding img { height: 60px; }
+    .branding .state-name { font-size: 1.8rem; }
+    .branding .state-slogan, .button-primary { display: none; }
+    .hero-section h1 { font-size: 3rem; }
+    .hero-section p { font-size: 1.5rem; }
+    .services-grid, .news-grid { grid-template-columns: 1fr; }
+}
+
+.mobile-navigation { display: flex; position: fixed; top: 0; left: 0; width: 100%; height: 100vh; background-color: var(--cor-azul-escuro); transform: translateX(-100%); transition: transform 0.4s ease-in-out; z-index: 1001; flex-direction: column; align-items: center; justify-content: center; }
+.mobile-navigation.active { transform: translateX(0); }
+.mobile-nav-list { display: flex; flex-direction: column; align-items: center; gap: 1rem; width: 100%; margin-bottom: 3rem; }
+.mobile-nav-list a { color: var(--cor-branco); font-size: 2.5rem; text-decoration: none; font-weight: 500; padding: 0.8rem 1.5rem; width: 80%; text-align: center; }
+.mobile-nav-actions { display: flex; flex-direction: column; gap: 1rem; width: 80%; max-width: 400px; }
+.button-primary-mobile { background-color: var(--cor-amarelo-ro-viva); color: var(--cor-azul-escuro); padding: 1rem 2rem; border-radius: 50px; text-align: center; font-weight: 600; text-decoration: none; }
+body.mobile-nav-active .mobile-nav-toggle { position: fixed; top: 40px; right: 5%; z-index: 1002; }
+body.mobile-nav-active .hamburger-line { background-color: var(--cor-amarelo-ro-viva); }
+body.mobile-nav-active .hamburger-line:nth-child(1) { transform: rotate(45deg) translate(10px, 10px); }
+body.mobile-nav-active .hamburger-line:nth-child(2) { opacity: 0; }
+body.mobile-nav-active .hamburger-line:nth-child(3) { transform: rotate(-45deg) translate(9px, -9px); }
+
+
+/* =================================================================== */
+/* CSS PARA O FOOTER (RODAPÉ) - v3.0                                   */
+/* Com escala máxima em todos os elementos                             */
+/* =================================================================== */
+
+/* ------------------------------------------------------------------- */
+/* Estilo Geral do Footer                                              */
+/* ------------------------------------------------------------------- */
+.site-footer {
+    background-color: var(--cor-azul-escuro);
+    color: #aeb8c2;
+    font-size: 1.3rem; /* Aumentando ainda mais a fonte base do footer */
+    line-height: 1.8;
+}
+
+/* ------------------------------------------------------------------- */
+/* Parte Principal do Footer (Logo e Links)                            */
+/* ------------------------------------------------------------------- */
+.footer-main {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1.5fr;
+    gap: 5rem; /* Mais espaço entre colunas */
+    padding: 8rem 0; /* Espaçamento vertical máximo */
+}
+
+.footer-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-branding img {
+    max-width: 280px; /* Logo em tamanho de destaque máximo */
+    margin-bottom: 2.5rem;
+}
+
+.footer-title {
+    color: var(--cor-branco);
+    font-size: 2.4rem; /* Título bem maior */
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.footer-slogan {
+    font-size: 1.5rem; /* Slogan bem maior */
+    opacity: 0.8;
+}
+
+.footer-heading {
+    color: var(--cor-branco);
+    font-size: 1.8rem; /* Títulos das colunas bem maiores */
+    font-weight: 600;
+    margin-bottom: 2.5rem;
+    position: relative;
+    padding-bottom: 1.5rem;
+}
+
+.footer-heading::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px; /* Linha de detalhe maior */
+    height: 5px; /* Linha de detalhe mais grossa */
+    background-color: var(--cor-amarelo-ro-viva);
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links a {
+    color: #aeb8c2;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-block;
+    padding: 0.5rem 0;
+    font-size: 1.3rem; /* Links bem maiores */
+}
+
+.footer-links a:hover {
+    color: var(--cor-amarelo-ro-viva);
+    transform: translateX(8px); /* Efeito de deslocamento maior */
+}
+
+/* Ícones de Redes Sociais */
+.social-media-icons {
+    display: flex;
+    gap: 2rem; /* Mais espaço entre os ícones */
+}
+
+.social-media-icons a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 70px;  /* Ícones em tamanho máximo */
+    height: 70px; /* Ícones em tamanho máximo */
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--cor-branco);
+    border-radius: 50%;
+    font-size: 2rem; /* Ícones internos bem maiores */
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.social-media-icons a:hover {
+    background-color: var(--cor-amarelo-ro-viva);
+    color: var(--cor-azul-escuro);
+    transform: translateY(-8px) scale(1.1); /* Efeito de destaque maior */
+}
+
+/* ------------------------------------------------------------------- */
+/* Divisor, Contato e Barra Final                                      */
+/* ------------------------------------------------------------------- */
+.footer-divider {
+    border: 0;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+.footer-contact {
+    padding: 4rem 0;
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+.footer-bottom {
+    background-color: #001f3a;
+    padding: 3rem 0;
+}
+
+.footer-bottom p {
+    margin: 0;
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+/* ------------------------------------------------------------------- */
+/* Responsividade do Footer                                            */
+/* ------------------------------------------------------------------- */
+@media (max-width: 1024px) {
+    .footer-main {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 4rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .footer-main {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    .footer-branding {
+        align-items: center;
+    }
+    .footer-heading::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
