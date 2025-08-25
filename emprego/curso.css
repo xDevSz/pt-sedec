@@ -1,0 +1,457 @@
+/* --- Layout Geral da Página de Cursos --- */
+.curso-main-content {
+    padding-top: 10rem;
+    background-color: #f0f4f8;
+}
+
+.curso-grid-container {
+    display: grid;
+    grid-template-columns: 35rem 1fr;
+    gap: 3rem;
+    padding: 3rem 0;
+}
+
+/* --- Barra de Filtros (Sidebar) --- */
+.curso-sidebar {
+    background-color: #fff;
+    padding: 2.5rem;
+    border-radius: 16px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    height: fit-content;
+    position: sticky;
+    top: 12rem;
+    max-height: calc(100vh - 15rem);
+    overflow-y: auto;
+}
+
+.sidebar-header {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid #dcdfe4;
+    margin-bottom: 2.5rem;
+}
+
+.sidebar-icon {
+    font-size: 2.4rem;
+    color: var(--cor-azul-principal);
+}
+
+.curso-sidebar h3 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin: 0;
+    color: var(--cor-texto-escuro);
+}
+
+/* --- Filtros Aplicados e Busca --- */
+.filter-group {
+    margin-bottom: 2.5rem;
+}
+
+.filter-group h4 {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: var(--cor-texto-escuro);
+    margin-bottom: 1.5rem;
+}
+
+.filter-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.filter-tag {
+    background-color: var(--cor-azul-principal);
+    color: var(--cor-branco);
+    font-size: 1.3rem;
+    font-weight: 500;
+    padding: 0.8rem 1.2rem;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    transition: all 0.2s ease;
+}
+
+.filter-tag .fas {
+    cursor: pointer;
+    font-size: 1rem;
+    opacity: 0.8;
+}
+
+.reset-filters {
+    font-size: 1.3rem;
+    color: var(--cor-azul-principal);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.reset-filters:hover {
+    color: var(--cor-texto-escuro);
+}
+
+.search-filter {
+    position: relative;
+    margin-bottom: 2.5rem;
+}
+
+.search-filter input {
+    width: 100%;
+    padding: 1.2rem 4rem 1.2rem 1.5rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1.4rem;
+    background-color: var(--cor-fundo);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.search-filter input:focus {
+    outline: none;
+    border-color: var(--cor-azul-principal);
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+
+.search-filter button {
+    position: absolute;
+    right: 1.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: var(--cor-azul-principal);
+    cursor: pointer;
+    font-size: 2rem;
+    transition: color 0.2s ease;
+}
+
+.search-filter button:hover {
+    color: var(--cor-azul-hover);
+}
+
+/* --- Seções de Filtro (Accordion) --- */
+.filter-accordion {
+    margin-bottom: 1.5rem;
+    background-color: var(--cor-fundo);
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.filter-accordion:hover {
+    border-color: var(--cor-azul-principal);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.filter-accordion summary {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    font-size: 1.6rem;
+    font-weight: 600;
+    padding: 1.5rem;
+    cursor: pointer;
+    list-style: none;
+}
+
+.filter-accordion summary::-webkit-details-marker {
+    display: none;
+}
+
+.filter-accordion summary::after {
+    content: '\f078';
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    margin-left: auto;
+    transition: transform 0.3s ease;
+}
+
+.filter-accordion[open] summary::after {
+    transform: rotate(180deg);
+}
+
+.accordion-content {
+    padding: 1rem 1.5rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    border-top: 1px solid #e9ecef;
+}
+
+.radio-option, .checkbox-option {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 1.4rem;
+    color: var(--cor-texto-escuro);
+    cursor: pointer;
+    background-color: #f8f9fa;
+    border: 1px solid #dcdfe4;
+    padding: 1rem 1.5rem;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+}
+
+.radio-option:hover, .checkbox-option:hover {
+    background-color: #e9ecef;
+}
+
+.radio-option input, .checkbox-option input {
+    display: none;
+}
+
+.radio-option:has(input:checked), .checkbox-option:has(input:checked) {
+    background-color: var(--cor-azul-principal);
+    color: var(--cor-branco);
+    border-color: var(--cor-azul-principal);
+}
+
+.filter-actions {
+    margin-top: 3rem;
+}
+
+.filter-actions .button-primary {
+    width: 100%;
+    border-radius: 8px;
+    padding: 1.5rem;
+    font-size: 1.6rem;
+}
+
+/* --- Conteúdo Principal (Lista de Cursos) --- */
+.curso-content-area {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.curso-stats-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 2.5rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    margin-bottom: 2rem;
+}
+
+.curso-stats-bar .results-heading {
+    font-size: 2rem;
+    font-weight: 600;
+    margin: 0;
+    color: var(--cor-texto-escuro);
+}
+
+.curso-stats-bar .toolbar-search {
+    position: relative;
+    width: 30rem;
+}
+
+.curso-stats-bar .toolbar-search input {
+    width: 100%;
+    padding: 1.2rem 4rem 1.2rem 1.5rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1.4rem;
+    background-color: var(--cor-fundo);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.curso-stats-bar .toolbar-search input:focus {
+    outline: none;
+    border-color: var(--cor-azul-principal);
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+
+.curso-stats-bar .toolbar-search i {
+    position: absolute;
+    right: 1.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--cor-texto-claro);
+    font-size: 1.6rem;
+    pointer-events: none;
+}
+
+/* --- Cards de Cursos --- */
+.curso-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap: 3rem;
+}
+
+.curso-list-card {
+    background-color: #fff;
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s ease;
+}
+
+.curso-list-card:hover {
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    transform: translateY(-5px);
+}
+
+.curso-card-header {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.5rem;
+}
+
+.curso-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.curso-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--cor-texto-escuro);
+    margin: 0 0 0.5rem 0;
+}
+
+.curso-category {
+    font-size: 1.3rem;
+    color: var(--cor-texto-claro);
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* Destaque para o ícone da categoria */
+.curso-category i {
+    color: var(--cor-azul-principal);
+    font-size: 1.6rem;
+    margin-right: 0.5rem;
+}
+
+.curso-card-body {
+    padding-left: 0;
+}
+
+.curso-summary {
+    font-size: 1.4rem;
+    color: var(--cor-texto-claro);
+    line-height: 1.7;
+    margin-bottom: 2rem;
+}
+
+.curso-details-list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 2.5rem;
+    list-style: none;
+    margin: 0 0 1.5rem 0;
+    font-size: 1.4rem;
+    color: var(--cor-texto-claro);
+    border-top: 1px solid #eee;
+    padding-top: 1.5rem;
+}
+
+.curso-details-list li {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.curso-link-button {
+    background-color: var(--cor-azul-principal);
+    color: var(--cor-branco);
+    text-decoration: none;
+    font-size: 1.4rem;
+    font-weight: 600;
+    padding: 1.2rem 2.5rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    margin-top: auto;
+}
+
+.curso-link-button:hover {
+    background-color: var(--cor-azul-hover);
+    transform: translateY(-3px);
+}
+
+/* --- Responsividade --- // 
+.toggle-filter-btn {
+    display: none;
+    width: 100%;
+    padding: 1.5rem;
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: var(--cor-azul-principal);
+    background-color: #e7f3ff;
+    border: 1px solid var(--cor-azul-principal);
+    border-radius: 8px;
+    cursor: pointer;
+    margin-bottom: 2rem;
+    gap: 1rem;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.toggle-filter-btn:hover {
+    background-color: var(--cor-azul-principal);
+    color: var(--cor-branco);
+}
+
+.filter-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 100;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.filter-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+@media (max-width: 992px) {
+    .curso-grid-container {
+        grid-template-columns: 1fr;
+    }
+    .curso-sidebar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 101;
+        width: 80%;
+        height: 100vh;
+        transform: translateX(-100%);
+        transition: transform 0.4s ease-in-out;
+        max-height: 100vh;
+        border-radius: 0;
+    }
+    .curso-sidebar.active {
+        transform: translateX(0);
+        box-shadow: 10px 0 30px rgba(0,0,0,0.2);
+    }
+    .toggle-filter-btn {
+        display: flex;
+    }
+    .curso-stats-bar {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+    .curso-stats-bar .toolbar-search {
+        width: 100%;
+    }
+}

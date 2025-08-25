@@ -1,0 +1,1186 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vagas de Emprego - Geração Emprego</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="vagas.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+
+    <header class="emprego-header">
+        <div class="container header-content">
+            <div class="branding-area">
+                <a href="index.html" class="emprego-branding">
+                    <img src="https://geracaoemprego.ro.gov.br/static/media/logo_header.c6f84656.png" alt="Logo Geração Emprego">
+                </a>
+                <div class="header-actions">
+                    <a href="#" class="button-secondary">Entrar</a>
+                    <a href="#" class="button-primary">Cadastre-se</a>
+                </div>
+            </div>
+            <nav class="emprego-navigation">
+                <ul>
+                    <li><a href="index.html"><i class="fa-solid fa-house"></i> Home</a></li>
+                    <li><a href="#"><i class="fa-solid fa-magnifying-glass-chart"></i> Buscar Currículos</a></li>
+                    <li><a href="vagas.html" class="active"><i class="fa-solid fa-briefcase"></i> Vagas</a></li>
+                    <li><a href="curso.html"><i class="fa-solid fa-graduation-cap"></i> Cursos</a></li>
+                    <li><a href="#"><i class="fa-solid fa-file-lines"></i> Editais</a></li>
+                    <li><a href="#"><i class="fa-solid fa-building"></i> Empresas</a></li>
+                </ul>
+            </nav>
+            <button class="mobile-nav-toggle" aria-label="Abrir menu">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+        </div>
+    </header>
+
+    <div class="mobile-navigation" id="mobile-navigation">
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="#">Buscar Currículos</a>
+            <a href="vagas.html">Vagas</a>
+            <a href="curso.html">Cursos</a>
+            <a href="#">Editais</a>
+            <a href="#">Empresas</a>
+        </nav>
+        <div class="mobile-actions">
+            <a href="#" class="button-secondary">Entrar</a>
+            <a href="#" class="button-primary">Cadastre-se</a>
+        </div>
+    </div>
+
+    <main class="vagas-main-content">
+        <div class="container vagas-grid-container">
+            <aside class="vagas-sidebar">
+                <div class="sidebar-header">
+                    <i class="fas fa-filter sidebar-icon"></i>
+                    <h3>Filtros</h3>
+                </div>
+                <section class="filter-group">
+                    <h4>Filtros Aplicados</h4>
+                    <div class="filter-tags">
+                        </div>
+                    <a href="#" class="reset-filters">Redefinir filtros</a>
+                </section>
+                <div class="search-filter">
+                    <input type="text" placeholder="Buscar por palavra-chave">
+                    <button type="submit"><i class="fas fa-search"></i></button>
+                </div>
+                <details class="filter-accordion" open>
+                    <summary>
+                        <i class="fas fa-sort-amount-down"></i>
+                        <span>Ordenar por</span>
+                    </summary>
+                    <div class="accordion-content">
+                        <label class="radio-option"><input type="radio" name="order" checked> Mais recentes</label>
+                        <label class="radio-option"><input type="radio" name="order"> Mais próximos de mim</label>
+                    </div>
+                </details>
+                <details class="filter-accordion">
+                    <summary>
+                        <i class="fas fa-city"></i>
+                        <span>Cidade</span>
+                    </summary>
+                    <div class="accordion-content">
+                         <label class="radio-option"><input type="radio" name="cidade"> Rondônia</label>
+                         <label class="radio-option"><input type="radio" name="cidade"> Ariquemes</label>
+                         <label class="radio-option"><input type="radio" name="cidade"> Cacoal</label>
+                         <label class="radio-option"><input type="radio" name="cidade"> Ji-Paraná</label>
+                         <label class="radio-option"><input type="radio" name="cidade"> Jaru</label>
+                         <label class="radio-option"><input type="radio" name="cidade"> Ouro Preto do Oeste</label>
+                         <label class="radio-option"><input type="radio" name="cidade"> Porto Velho</label>
+                         <label class="radio-option"><input type="radio" name="cidade"> Rolim de Moura</label>
+                         <label class="radio-option"><input type="radio" name="cidade"> Vilhena</label>
+                    </div>
+                </details>
+                <details class="filter-accordion">
+                    <summary>
+                        <i class="fas fa-check-circle"></i>
+                        <span>Requerimento da vaga</span>
+                    </summary>
+                    <div class="accordion-content">
+                        <label class="checkbox-option"><input type="checkbox"> Precisa de Experiência</label>
+                        <label class="checkbox-option"><input type="checkbox"> Não Precisa de Experiência</label>
+                        <label class="checkbox-option"><input type="checkbox"> Todas</label>
+                    </div>
+                </details>
+                <details class="filter-accordion">
+                    <summary>
+                        <i class="fas fa-eye"></i>
+                        <span>Mostrar vagas</span>
+                    </summary>
+                    <div class="accordion-content">
+                         <label class="checkbox-option"><input type="checkbox"> Todas</label>
+                         <label class="checkbox-option"><input type="checkbox"> Para PcD</label>
+                    </div>
+                </details>
+                <details class="filter-accordion">
+                    <summary>
+                        <i class="fas fa-briefcase"></i>
+                        <span>Tipo de vaga</span>
+                    </summary>
+                    <div class="accordion-content">
+                        <label class="checkbox-option"><input type="checkbox"> Tempo integral</label>
+                        <label class="checkbox-option"><input type="checkbox"> Meio período</label>
+                        <label class="checkbox-option"><input type="checkbox"> Estágio</label>
+                        <label class="checkbox-option"><input type="checkbox"> Freelance</label>
+                        <label class="checkbox-option"><input type="checkbox"> Temporário</label>
+                        <label class="checkbox-option"><input type="checkbox"> Aprendiz</label>
+                        <label class="checkbox-option"><input type="checkbox"> Primeiro emprego</label>
+                    </div>
+                </details>
+                <details class="filter-accordion">
+                    <summary>
+                        <i class="fas fa-money-bill-wave"></i>
+                        <span>Salário a partir de</span>
+                    </summary>
+                    <div class="accordion-content">
+                        <label class="radio-option"><input type="radio" name="salary"> R$ 1.000,00</label>
+                        <label class="radio-option"><input type="radio" name="salary"> R$ 2.000,00</label>
+                        <label class="radio-option"><input type="radio" name="salary"> R$ 3.000,00</label>
+                        <label class="radio-option"><input type="radio" name="salary"> R$ 4.000,00+</label>
+                    </div>
+                </details>
+                <details class="filter-accordion">
+                    <summary>
+                        <i class="fas fa-wallet"></i>
+                        <span>Tipo de salário</span>
+                    </summary>
+                    <div class="accordion-content">
+                        <label class="checkbox-option"><input type="checkbox"> Mensal</label>
+                        <label class="checkbox-option"><input type="checkbox"> Quinzenal</label>
+                        <label class="checkbox-option"><input type="checkbox"> Diária</label>
+                        <label class="checkbox-option"><input type="checkbox"> Hora</label>
+                        <label class="checkbox-option"><input type="checkbox"> Por produção</label>
+                        <label class="checkbox-option"><input type="checkbox"> Por tarefa</label>
+                    </div>
+                </details>
+                <details class="filter-accordion">
+                    <summary>
+                        <i class="fas fa-graduation-cap"></i>
+                        <span>Escolaridade</span>
+                    </summary>
+                    <div class="accordion-content">
+                        <label class="checkbox-option"><input type="checkbox"> Analfabeto</label>
+                        <label class="checkbox-option"><input type="checkbox"> Fundamental incompleto</label>
+                        <label class="checkbox-option"><input type="checkbox"> Fundamental completo</label>
+                        <label class="checkbox-option"><input type="checkbox"> Médio incompleto</label>
+                        <label class="checkbox-option"><input type="checkbox"> Médio completo</label>
+                        <label class="checkbox-option"><input type="checkbox"> Superior incompleto</label>
+                        <label class="checkbox-option"><input type="checkbox"> Superior completo</label>
+                        <label class="checkbox-option"><input type="checkbox"> Mestrado</label>
+                        <label class="checkbox-option"><input type="checkbox"> Doutorado</label>
+                    </div>
+                </details>
+                <details class="filter-accordion">
+                    <summary>
+                        <i class="fas fa-map-marked-alt"></i>
+                        <span>Local da vaga</span>
+                    </summary>
+                    <div class="accordion-content">
+                        <label class="radio-option"><input type="radio" name="location"> Presencial</label>
+                        <label class="radio-option"><input type="radio" name="location"> Remoto</label>
+                    </div>
+                </details>
+                <div class="filter-actions">
+                    <button class="button-primary">Aplicar filtros</button>
+                </div>
+            </aside>
+
+            <div class="vagas-content-area">
+                <button class="toggle-filter-btn">
+                    <i class="fas fa-filter"></i>
+                    <span>Filtros</span>
+                </button>
+                <div class="vagas-stats-bar">
+                    <div class="stat-item">
+                        <span class="stat-number">3</span>
+                        <span class="stat-label">Total de vagas abertas</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">6.411</span>
+                        <span class="stat-label">Empresas cadastradas</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">32.581</span>
+                        <span class="stat-label">Publicações já realizadas</span>
+                    </div>
+                </div>
+                <div class="vagas-toolbar">
+                    <h2 class="results-heading">Mostrando 3 vagas</h2>
+                    <div class="toolbar-search">
+                        <input type="text" placeholder="Pesquisar por vaga ou empresa">
+                        <i class="fas fa-search"></i>
+                    </div>
+                </div>
+
+                <div class="vagas-list">
+                    <article class="job-list-card" data-cidade="Ariquemes" data-experiencia="Não Precisa de Experiência" data-tipo-vaga="Tempo integral" data-salario-minimo="3000" data-salario-tipo="Mensal" data-escolaridade="Superior completo" data-local="Presencial" data-pcd="false">
+                        <div class="job-card-header">
+                            <div class="company-logo">
+                                <i class="fas fa-briefcase"></i>
+                            </div>
+                            <div class="job-info">
+                                <h3 class="job-title">Lider Operacional</h3>
+                                <p class="job-location"><i class="fas fa-map-marker-alt"></i> Ariquemes</p>
+                                <p class="job-posted">Publicado em 24/08</p>
+                            </div>
+                        </div>
+                        <div class="job-card-body">
+                            <ul class="job-details-list">
+                                <li><i class="fas fa-money-bill-wave"></i> R$ 3.000,00</li>
+                                <li><i class="fas fa-clock"></i> Tempo integral</li>
+                                <li><i class="fas fa-users"></i> 1 Vaga(s)</li>
+                            </ul>
+                            <div class="job-benefits">
+                                <span class="benefit-tag">Adicional Noturno</span>
+                                <span class="benefit-tag">Plano de Carreira</span>
+                            </div>
+                            <p class="job-summary">
+                                Planejam as atividades operacionais de empresas de armazenamento, distribuição,
+                                transportes, comunicações e logística...
+                            </p>
+                            <a href="#" class="job-link-button">Ver Vaga Completa</a>
+                        </div>
+                    </article>
+
+                    <article class="job-list-card" data-cidade="Remoto" data-experiencia="Precisa de Experiência" data-tipo-vaga="Tempo integral" data-salario-minimo="3500" data-salario-tipo="Mensal" data-escolaridade="Superior incompleto" data-local="Remoto" data-pcd="true">
+                        <div class="job-card-header">
+                            <div class="company-logo">
+                                <i class="fas fa-laptop-code"></i>
+                            </div>
+                            <div class="job-info">
+                                <h3 class="job-title">Desenvolvedor Front-end Júnior</h3>
+                                <p class="job-location"><i class="fas fa-map-marker-alt"></i> Remoto</p>
+                                <p class="job-posted">Publicado em 23/08</p>
+                            </div>
+                        </div>
+                        <div class="job-card-body">
+                            <ul class="job-details-list">
+                                <li><i class="fas fa-money-bill-wave"></i> R$ 3.500,00</li>
+                                <li><i class="fas fa-clock"></i> Tempo integral</li>
+                                <li><i class="fas fa-users"></i> 2 Vaga(s)</li>
+                            </ul>
+                            <div class="job-benefits">
+                                <span class="benefit-tag">Plano de Saúde</span>
+                                <span class="benefit-tag">Vale-Refeição</span>
+                                <span class="benefit-tag pcd-tag"><i class="fas fa-wheelchair"></i> Para PcD</span>
+                            </div>
+                            <p class="job-summary">
+                                Desenvolvimento e manutenção de interfaces web, utilizando HTML, CSS
+                                e JavaScript. Noções de React ou Vue.js são um diferencial...
+                            </p>
+                            <a href="#" class="job-link-button">Ver Vaga Completa</a>
+                        </div>
+                    </article>
+
+                    <article class="job-list-card" data-cidade="Porto Velho" data-experiencia="Não Precisa de Experiência" data-tipo-vaga="Estágio" data-salario-minimo="1200" data-salario-tipo="Mensal" data-escolaridade="Ensino superior" data-local="Presencial" data-pcd="true">
+                        <div class="job-card-header">
+                            <div class="company-logo">
+                                <i class="fas fa-user-graduate"></i>
+                            </div>
+                            <div class="job-info">
+                                <h3 class="job-title">Estagiário de Marketing</h3>
+                                <p class="job-location"><i class="fas fa-map-marker-alt"></i> Porto Velho</p>
+                                <p class="job-posted">Publicado em 22/08</p>
+                            </div>
+                        </div>
+                        <div class="job-card-body">
+                            <ul class="job-details-list">
+                                <li><i class="fas fa-money-bill-wave"></i> R$ 1.200,00</li>
+                                <li><i class="fas fa-clock"></i> Meio período</li>
+                                <li><i class="fas fa-users"></i> 1 Vaga(s)</li>
+                            </ul>
+                            <div class="job-benefits">
+                                <span class="benefit-tag">Estágio</span>
+                                <span class="benefit-tag pcd-tag"><i class="fas fa-wheelchair"></i> Para PcD</span>
+                            </div>
+                            <p class="job-summary">
+                                Auxiliar na criação de conteúdo para mídias sociais, análise de métricas
+                                e suporte em campanhas de e-mail marketing...
+                            </p>
+                            <a href="#" class="job-link-button">Ver Vaga Completa</a>
+                        </div>
+                    </article>
+                    <article class="job-list-card" data-cidade="Porto Velho" data-experiencia="Precisa de Experiência" data-tipo-vaga="Tempo integral" data-salario-minimo="4000" data-salario-tipo="Mensal" data-escolaridade="Superior completo" data-local="Presencial" data-pcd="true">
+                    <div class="job-card-header">
+                        <div class="company-logo">
+                            <i class="fas fa-wheelchair"></i>
+                        </div>
+                        <div class="job-info">
+                            <h3 class="job-title">Analista de Dados Pleno (PcD)</h3>
+                            <p class="job-location"><i class="fas fa-map-marker-alt"></i> Porto Velho</p>
+                            <p class="job-posted">Publicado em 24/08</p>
+                        </div>
+                    </div>
+                    <div class="job-card-body">
+                        <ul class="job-details-list">
+                            <li><i class="fas fa-money-bill-wave"></i> R$ 4.500,00</li>
+                            <li><i class="fas fa-clock"></i> Tempo integral</li>
+                            <li><i class="fas fa-users"></i> 1 Vaga(s)</li>
+                        </ul>
+                        <div class="job-benefits">
+                            <span class="benefit-tag">Plano de Saúde</span>
+                            <span class="benefit-tag pcd-tag"><i class="fas fa-wheelchair"></i> Para PcD</span>
+                        </div>
+                        <p class="job-summary">
+                            Responsável pela coleta, processamento e análise de dados para gerar insights de negócios...
+                        </p>
+                        <a href="#" class="job-link-button">Ver Vaga Completa</a>
+                    </div>
+                </article>
+
+                <article class="job-list-card" data-cidade="Ji-Paraná" data-experiencia="Não Precisa de Experiência" data-tipo-vaga="Aprendiz" data-salario-minimo="1000" data-salario-tipo="Mensal" data-escolaridade="Médio incompleto" data-local="Presencial" data-pcd="false">
+                    <div class="job-card-header">
+                        <div class="company-logo">
+                            <i class="fas fa-user-tie"></i>
+                        </div>
+                        <div class="job-info">
+                            <h3 class="job-title">Aprendiz Administrativo</h3>
+                            <p class="job-location"><i class="fas fa-map-marker-alt"></i> Ji-Paraná</p>
+                            <p class="job-posted">Publicado em 23/08</p>
+                        </div>
+                    </div>
+                    <div class="job-card-body">
+                        <ul class="job-details-list">
+                            <li><i class="fas fa-money-bill-wave"></i> R$ 1.000,00</li>
+                            <li><i class="fas fa-clock"></i> Meio período</li>
+                            <li><i class="fas fa-users"></i> 2 Vaga(s)</li>
+                        </ul>
+                        <div class="job-benefits">
+                            <span class="benefit-tag">Aprendiz</span>
+                            <span class="benefit-tag">Vale-Transporte</span>
+                        </div>
+                        <p class="job-summary">
+                            Suporte às rotinas administrativas e de escritório, organização de documentos e atendimento...
+                        </p>
+                        <a href="#" class="job-link-button">Ver Vaga Completa</a>
+                    </div>
+                </article>
+
+                <article class="job-list-card" data-cidade="Remoto" data-experiencia="Precisa de Experiência" data-tipo-vaga="Freelance" data-salario-minimo="3000" data-salario-tipo="Por tarefa" data-escolaridade="Superior completo" data-local="Remoto" data-pcd="false">
+                    <div class="job-card-header">
+                        <div class="company-logo">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <div class="job-info">
+                            <h3 class="job-title">Desenvolvedor Back-end Freelance</h3>
+                            <p class="job-location"><i class="fas fa-map-marker-alt"></i> Remoto</p>
+                            <p class="job-posted">Publicado em 23/08</p>
+                        </div>
+                    </div>
+                    <div class="job-card-body">
+                        <ul class="job-details-list">
+                            <li><i class="fas fa-money-bill-wave"></i> R$ 3.000,00</li>
+                            <li><i class="fas fa-clock"></i> Freelance</li>
+                            <li><i class="fas fa-users"></i> 1 Vaga(s)</li>
+                        </ul>
+                        <div class="job-benefits">
+                            <span class="benefit-tag">Por tarefa</span>
+                        </div>
+                        <p class="job-summary">
+                            Desenvolvimento de APIs e integrações para projetos web, com foco em Node.js e Python...
+                        </p>
+                        <a href="#" class="job-link-button">Ver Vaga Completa</a>
+                    </div>
+                </article>
+
+                <article class="job-list-card" data-cidade="Ariquemes" data-experiencia="Não Precisa de Experiência" data-tipo-vaga="Primeiro emprego" data-salario-minimo="1500" data-salario-tipo="Mensal" data-escolaridade="Médio completo" data-local="Presencial" data-pcd="false">
+                    <div class="job-card-header">
+                        <div class="company-logo">
+                            <i class="fas fa-briefcase"></i>
+                        </div>
+                        <div class="job-info">
+                            <h3 class="job-title">Assistente de Loja</h3>
+                            <p class="job-location"><i class="fas fa-map-marker-alt"></i> Ariquemes</p>
+                            <p class="job-posted">Publicado em 22/08</p>
+                        </div>
+                    </div>
+                    <div class="job-card-body">
+                        <ul class="job-details-list">
+                            <li><i class="fas fa-money-bill-wave"></i> R$ 1.500,00</li>
+                            <li><i class="fas fa-clock"></i> Tempo integral</li>
+                            <li><i class="fas fa-users"></i> 3 Vaga(s)</li>
+                        </ul>
+                        <div class="job-benefits">
+                            <span class="benefit-tag">Primeiro emprego</span>
+                            <span class="benefit-tag">Vale-Alimentação</span>
+                        </div>
+                        <p class="job-summary">
+                            Atendimento ao cliente, organização do estoque e reposição de mercadorias. Vaga para quem busca a primeira experiência profissional...
+                        </p>
+                        <a href="#" class="job-link-button">Ver Vaga Completa</a>
+                    </div>
+                </article>
+
+                <article class="job-list-card" data-cidade="Cacoal" data-experiencia="Precisa de Experiência" data-tipo-vaga="Meio período" data-salario-minimo="2000" data-salario-tipo="Hora" data-escolaridade="Superior completo" data-local="Presencial" data-pcd="false">
+                    <div class="job-card-header">
+                        <div class="company-logo">
+                            <i class="fas fa-book-reader"></i>
+                        </div>
+                        <div class="job-info">
+                            <h3 class="job-title">Tutor de Reforço</h3>
+                            <p class="job-location"><i class="fas fa-map-marker-alt"></i> Cacoal</p>
+                            <p class="job-posted">Publicado em 21/08</p>
+                        </div>
+                    </div>
+                    <div class="job-card-body">
+                        <ul class="job-details-list">
+                            <li><i class="fas fa-money-bill-wave"></i> R$ 25,00 / hora</li>
+                            <li><i class="fas fa-clock"></i> Meio período</li>
+                            <li><i class="fas fa-users"></i> 1 Vaga(s)</li>
+                        </ul>
+                        <div class="job-benefits">
+                            <span class="benefit-tag">Hora</span>
+                        </div>
+                        <p class="job-summary">
+                            Ministrar aulas de reforço em matemática e física para alunos do ensino médio, com experiência comprovada...
+                        </p>
+                        <a href="#" class="job-link-button">Ver Vaga Completa</a>
+                    </div>
+                </article>
+
+                <article class="job-list-card" data-cidade="Porto Velho" data-experiencia="Não Precisa de Experiência" data-tipo-vaga="Temporário" data-salario-minimo="1600" data-salario-tipo="Diária" data-escolaridade="Médio completo" data-local="Presencial" data-pcd="false">
+                    <div class="job-card-header">
+                        <div class="company-logo">
+                            <i class="fas fa-box"></i>
+                        </div>
+                        <div class="job-info">
+                            <h3 class="job-title">Auxiliar de Inventário</h3>
+                            <p class="job-location"><i class="fas fa-map-marker-alt"></i> Porto Velho</p>
+                            <p class="job-posted">Publicado em 21/08</p>
+                        </div>
+                    </div>
+                    <div class="job-card-body">
+                        <ul class="job-details-list">
+                            <li><i class="fas fa-money-bill-wave"></i> R$ 80,00 / dia</li>
+                            <li><i class="fas fa-clock"></i> Temporário</li>
+                            <li><i class="fas fa-users"></i> 5 Vaga(s)</li>
+                        </ul>
+                        <div class="job-benefits">
+                            <span class="benefit-tag">Diária</span>
+                            <span class="benefit-tag">Temporário</span>
+                        </div>
+                        <p class="job-summary">
+                            Contagem e organização do estoque, registro de entrada e saída de produtos...
+                        </p>
+                        <a href="#" class="job-link-button">Ver Vaga Completa</a>
+                    </div>
+                </article>
+
+                <article class="job-list-card" data-cidade="Remoto" data-experiencia="Precisa de Experiência" data-tipo-vaga="Freelance" data-salario-minimo="3000" data-salario-tipo="Por produção" data-escolaridade="Superior completo" data-local="Remoto" data-pcd="false">
+                    <div class="job-card-header">
+                        <div class="company-logo">
+                            <i class="fas fa-pen-nib"></i>
+                        </div>
+                        <div class="job-info">
+                            <h3 class="job-title">Redator Publicitário</h3>
+                            <p class="job-location"><i class="fas fa-map-marker-alt"></i> Remoto</p>
+                            <p class="job-posted">Publicado em 20/08</p>
+                        </div>
+                    </div>
+                    <div class="job-card-body">
+                        <ul class="job-details-list">
+                            <li><i class="fas fa-money-bill-wave"></i> R$ 200,00 / artigo</li>
+                            <li><i class="fas fa-clock"></i> Freelance</li>
+                            <li><i class="fas fa-users"></i> 1 Vaga(s)</li>
+                        </ul>
+                        <div class="job-benefits">
+                            <span class="benefit-tag">Por produção</span>
+                        </div>
+                        <p class="job-summary">
+                            Criação de textos persuasivos e roteiros para campanhas de marketing digital...
+                        </p>
+                        <a href="#" class="job-link-button">Ver Vaga Completa</a>
+                    </div>
+                </article>
+
+                <article class="job-list-card" data-cidade="Vilhena" data-experiencia="Precisa de Experiência" data-tipo-vaga="Tempo integral" data-salario-minimo="2500" data-salario-tipo="Mensal" data-escolaridade="Ensino superior" data-local="Presencial" data-pcd="true">
+                    <div class="job-card-header">
+                        <div class="company-logo">
+                            <i class="fas fa-building"></i>
+                        </div>
+                        <div class="job-info">
+                            <h3 class="job-title">Gerente de Vendas (PcD)</h3>
+                            <p class="job-location"><i class="fas fa-map-marker-alt"></i> Vilhena</p>
+                            <p class="job-posted">Publicado em 19/08</p>
+                        </div>
+                    </div>
+                    <div class="job-card-body">
+                        <ul class="job-details-list">
+                            <li><i class="fas fa-money-bill-wave"></i> R$ 2.500,00</li>
+                            <li><i class="fas fa-clock"></i> Tempo integral</li>
+                            <li><i class="fas fa-users"></i> 1 Vaga(s)</li>
+                        </ul>
+                        <div class="job-benefits">
+                            <span class="benefit-tag pcd-tag"><i class="fas fa-wheelchair"></i> Para PcD</span>
+                            <span class="benefit-tag">Comissão</span>
+                        </div>
+                        <p class="job-summary">
+                            Liderar equipe, planejar estratégias de vendas, atingir metas e garantir a satisfação dos clientes...
+                        </p>
+                        <a href="#" class="job-link-button">Ver Vaga Completa</a>
+                    </div>
+                </article>
+
+                <article class="job-list-card" data-cidade="Ariquemes" data-experiencia="Precisa de Experiência" data-tipo-vaga="Meio período" data-salario-minimo="1500" data-salario-tipo="Quinzenal" data-escolaridade="Médio completo" data-local="Presencial" data-pcd="false">
+                    <div class="job-card-header">
+                        <div class="company-logo">
+                            <i class="fas fa-briefcase"></i>
+                        </div>
+                        <div class="job-info">
+                            <h3 class="job-title">Vendedor Externo</h3>
+                            <p class="job-location"><i class="fas fa-map-marker-alt"></i> Ariquemes</p>
+                            <p class="job-posted">Publicado em 18/08</p>
+                        </div>
+                    </div>
+                    <div class="job-card-body">
+                        <ul class="job-details-list">
+                            <li><i class="fas fa-money-bill-wave"></i> R$ 750,00 / quinzenal</li>
+                            <li><i class="fas fa-clock"></i> Meio período</li>
+                            <li><i class="fas fa-users"></i> 2 Vaga(s)</li>
+                        </ul>
+                        <div class="job-benefits">
+                            <span class="benefit-tag">Quinzenal</span>
+                            <span class="benefit-tag">Comissão</span>
+                        </div>
+                        <p class="job-summary">
+                            Prospecção de novos clientes, apresentação de produtos e serviços, negociação e fechamento de vendas...
+                        </p>
+                        <a href="#" class="job-link-button">Ver Vaga Completa</a>
+                    </div>
+                </article>
+
+                <article class="job-list-card" data-cidade="Ji-Paraná" data-experiencia="Precisa de Experiência" data-tipo-vaga="Tempo integral" data-salario-minimo="4000" data-salario-tipo="Mensal" data-escolaridade="Superior completo" data-local="Presencial" data-pcd="false">
+                    <div class="job-card-header">
+                        <div class="company-logo">
+                            <i class="fas fa-hand-holding-usd"></i>
+                        </div>
+                        <div class="job-info">
+                            <h3 class="job-title">Coordenador Financeiro</h3>
+                            <p class="job-location"><i class="fas fa-map-marker-alt"></i> Ji-Paraná</p>
+                            <p class="job-posted">Publicado em 17/08</p>
+                        </div>
+                    </div>
+                    <div class="job-card-body">
+                        <ul class="job-details-list">
+                            <li><i class="fas fa-money-bill-wave"></i> R$ 5.000,00</li>
+                            <li><i class="fas fa-clock"></i> Tempo integral</li>
+                            <li><i class="fas fa-users"></i> 1 Vaga(s)</li>
+                        </ul>
+                        <div class="job-benefits">
+                            <span class="benefit-tag">Plano de Carreira</span>
+                            <span class="benefit-tag">Plano de Saúde</span>
+                        </div>
+                        <p class="job-summary">
+                            Gerenciar as atividades financeiras, elaborar orçamentos e relatórios, e garantir o cumprimento das metas...
+                        </p>
+                        <a href="#" class="job-link-button">Ver Vaga Completa</a>
+                    </div>
+                </article>
+
+                <article class="job-list-card" data-cidade="Remoto" data-experiencia="Não Precisa de Experiência" data-tipo-vaga="Freelance" data-salario-minimo="2000" data-salario-tipo="Por tarefa" data-escolaridade="Ensino superior" data-local="Remoto" data-pcd="false">
+                    <div class="job-card-header">
+                        <div class="company-logo">
+                            <i class="fas fa-laptop-code"></i>
+                        </div>
+                        <div class="job-info">
+                            <h3 class="job-title">Designer UI/UX</h3>
+                            <p class="job-location"><i class="fas fa-map-marker-alt"></i> Remoto</p>
+                            <p class="job-posted">Publicado em 16/08</p>
+                        </div>
+                    </div>
+                    <div class="job-card-body">
+                        <ul class="job-details-list">
+                            <li><i class="fas fa-money-bill-wave"></i> R$ 2.000,00 / projeto</li>
+                            <li><i class="fas fa-clock"></i> Freelance</li>
+                            <li><i class="fas fa-users"></i> 1 Vaga(s)</li>
+                        </ul>
+                        <div class="job-benefits">
+                            <span class="benefit-tag">Por tarefa</span>
+                        </div>
+                        <p class="job-summary">
+                            Desenvolver interfaces de usuário intuitivas e atraentes para aplicações web e mobile...
+                        </p>
+                        <a href="#" class="job-link-button">Ver Vaga Completa</a>
+                    </div>
+                </article>
+
+                <article class="job-list-card" data-cidade="Ouro Preto do Oeste" data-experiencia="Precisa de Experiência" data-tipo-vaga="Tempo integral" data-salario-minimo="2500" data-salario-tipo="Mensal" data-escolaridade="Superior completo" data-local="Presencial" data-pcd="false">
+                    <div class="job-card-header">
+                        <div class="company-logo">
+                            <i class="fas fa-truck-moving"></i>
+                        </div>
+                        <div class="job-info">
+                            <h3 class="job-title">Gerente de Logística</h3>
+                            <p class="job-location"><i class="fas fa-map-marker-alt"></i> Ouro Preto do Oeste</p>
+                            <p class="job-posted">Publicado em 15/08</p>
+                        </div>
+                    </div>
+                    <div class="job-card-body">
+                        <ul class="job-details-list">
+                            <li><i class="fas fa-money-bill-wave"></i> R$ 4.500,00</li>
+                            <li><i class="fas fa-clock"></i> Tempo integral</li>
+                            <li><i class="fas fa-users"></i> 1 Vaga(s)</li>
+                        </ul>
+                        <div class="job-benefits">
+                            <span class="benefit-tag">Adicional Noturno</span>
+                        </div>
+                        <p class="job-summary">
+                            Gerenciar as operações de transporte e armazenamento, otimizar rotas e garantir a eficiência da cadeia de suprimentos...
+                        </p>
+                        <a href="#" class="job-link-button">Ver Vaga Completa</a>
+                    </div>
+                </article>
+
+                <article class="job-list-card" data-cidade="Vilhena" data-experiencia="Não Precisa de Experiência" data-tipo-vaga="Estágio" data-salario-minimo="1000" data-salario-tipo="Mensal" data-escolaridade="Superior incompleto" data-local="Presencial" data-pcd="false">
+                    <div class="job-card-header">
+                        <div class="company-logo">
+                            <i class="fas fa-user-graduate"></i>
+                        </div>
+                        <div class="job-info">
+                            <h3 class="job-title">Estagiário de Contabilidade</h3>
+                            <p class="job-location"><i class="fas fa-map-marker-alt"></i> Vilhena</p>
+                            <p class="job-posted">Publicado em 14/08</p>
+                        </div>
+                    </div>
+                    <div class="job-card-body">
+                        <ul class="job-details-list">
+                            <li><i class="fas fa-money-bill-wave"></i> R$ 1.000,00</li>
+                            <li><i class="fas fa-clock"></i> Meio período</li>
+                            <li><i class="fas fa-users"></i> 1 Vaga(s)</li>
+                        </ul>
+                        <div class="job-benefits">
+                            <span class="benefit-tag">Estágio</span>
+                        </div>
+                        <p class="job-summary">
+                            Auxiliar nas rotinas fiscais e contábeis, como lançamento de notas e conciliação bancária...
+                        </p>
+                        <a href="#" class="job-link-button">Ver Vaga Completa</a>
+                    </div>
+                </article>
+
+                <article class="job-list-card" data-cidade="Porto Velho" data-experiencia="Precisa de Experiência" data-tipo-vaga="Tempo integral" data-salario-minimo="3000" data-salario-tipo="Mensal" data-escolaridade="Mestrado" data-local="Presencial" data-pcd="false">
+                    <div class="job-card-header">
+                        <div class="company-logo">
+                            <i class="fas fa-user-tie"></i>
+                        </div>
+                        <div class="job-info">
+                            <h3 class="job-title">Cientista de Dados</h3>
+                            <p class="job-location"><i class="fas fa-map-marker-alt"></i> Porto Velho</p>
+                            <p class="job-posted">Publicado em 13/08</p>
+                        </div>
+                    </div>
+                    <div class="job-card-body">
+                        <ul class="job-details-list">
+                            <li><i class="fas fa-money-bill-wave"></i> R$ 8.000,00</li>
+                            <li><i class="fas fa-clock"></i> Tempo integral</li>
+                            <li><i class="fas fa-users"></i> 1 Vaga(s)</li>
+                        </ul>
+                        <div class="job-benefits">
+                            <span class="benefit-tag">Plano de Saúde</span>
+                        </div>
+                        <p class="job-summary">
+                            Construção de modelos preditivos e análise estatística avançada para tomada de decisão...
+                        </p>
+                        <a href="#" class="job-link-button">Ver Vaga Completa</a>
+                    </div>
+                </article>
+
+                <article class="job-list-card" data-cidade="Ariquemes" data-experiencia="Não Precisa de Experiência" data-tipo-vaga="Tempo integral" data-salario-minimo="1000" data-salario-tipo="Mensal" data-escolaridade="Analfabeto" data-local="Presencial" data-pcd="false">
+                    <div class="job-card-header">
+                        <div class="company-logo">
+                            <i class="fas fa-hand-holding-box"></i>
+                        </div>
+                        <div class="job-info">
+                            <h3 class="job-title">Auxiliar de Serviços Gerais</h3>
+                            <p class="job-location"><i class="fas fa-map-marker-alt"></i> Ariquemes</p>
+                            <p class="job-posted">Publicado em 12/08</p>
+                        </div>
+                    </div>
+                    <div class="job-card-body">
+                        <ul class="job-details-list">
+                            <li><i class="fas fa-money-bill-wave"></i> R$ 1.500,00</li>
+                            <li><i class="fas fa-clock"></i> Tempo integral</li>
+                            <li><i class="fas fa-users"></i> 5 Vaga(s)</li>
+                        </ul>
+                        <div class="job-benefits">
+                            <span class="benefit-tag">Vale-Alimentação</span>
+                        </div>
+                        <p class="job-summary">
+                            Limpeza e manutenção de áreas comuns da empresa, com ou sem experiência prévia...
+                        </p>
+                        <a href="#" class="job-link-button">Ver Vaga Completa</a>
+                    </div>
+                </article>
+
+                <article class="job-list-card" data-cidade="Vilhena" data-experiencia="Não Precisa de Experiência" data-tipo-vaga="Aprendiz" data-salario-minimo="1000" data-salario-tipo="Mensal" data-escolaridade="Fundamental completo" data-local="Presencial" data-pcd="false">
+                    <div class="job-card-header">
+                        <div class="company-logo">
+                            <i class="fas fa-briefcase"></i>
+                        </div>
+                        <div class="job-info">
+                            <h3 class="job-title">Jovem Aprendiz</h3>
+                            <p class="job-location"><i class="fas fa-map-marker-alt"></i> Vilhena</p>
+                            <p class="job-posted">Publicado em 11/08</p>
+                        </div>
+                    </div>
+                    <div class="job-card-body">
+                        <ul class="job-details-list">
+                            <li><i class="fas fa-money-bill-wave"></i> R$ 1.000,00</li>
+                            <li><i class="fas fa-clock"></i> Meio período</li>
+                            <li><i class="fas fa-users"></i> 2 Vaga(s)</li>
+                        </ul>
+                        <div class="job-benefits">
+                            <span class="benefit-tag">Aprendiz</span>
+                        </div>
+                        <p class="job-summary">
+                            Oportunidade para jovens ingressarem no mercado de trabalho em funções de apoio administrativo...
+                        </p>
+                        <a href="#" class="job-link-button">Ver Vaga Completa</a>
+                    </div>
+                </article>
+
+                <article class="job-list-card" data-cidade="Ji-Paraná" data-experiencia="Não Precisa de Experiência" data-tipo-vaga="Primeiro emprego" data-salario-minimo="1500" data-salario-tipo="Mensal" data-escolaridade="Médio completo" data-local="Presencial" data-pcd="false">
+                    <div class="job-card-header">
+                        <div class="company-logo">
+                            <i class="fas fa-user-check"></i>
+                        </div>
+                        <div class="job-info">
+                            <h3 class="job-title">Atendente de Call Center</h3>
+                            <p class="job-location"><i class="fas fa-map-marker-alt"></i> Ji-Paraná</p>
+                            <p class="job-posted">Publicado em 10/08</p>
+                        </div>
+                    </div>
+                    <div class="job-card-body">
+                        <ul class="job-details-list">
+                            <li><i class="fas fa-money-bill-wave"></i> R$ 1.500,00</li>
+                            <li><i class="fas fa-clock"></i> Tempo integral</li>
+                            <li><i class="fas fa-users"></i> 10 Vaga(s)</li>
+                        </ul>
+                        <div class="job-benefits">
+                            <span class="benefit-tag">Primeiro emprego</span>
+                            <span class="benefit-tag">Vale-Alimentação</span>
+                        </div>
+                        <p class="job-summary">
+                            Receber e realizar ligações, registrar informações e solucionar problemas dos clientes...
+                        </p>
+                        <a href="#" class="job-link-button">Ver Vaga Completa</a>
+                    </div>
+                </article>
+
+                <article class="job-list-card" data-cidade="Remoto" data-experiencia="Precisa de Experiência" data-tipo-vaga="Meio período" data-salario-minimo="2000" data-salario-tipo="Por tarefa" data-escolaridade="Doutorado" data-local="Remoto" data-pcd="false">
+                    <div class="job-card-header">
+                        <div class="company-logo">
+                            <i class="fas fa-microscope"></i>
+                        </div>
+                        <div class="job-info">
+                            <h3 class="job-title">Pesquisador Sênior</h3>
+                            <p class="job-location"><i class="fas fa-map-marker-alt"></i> Remoto</p>
+                            <p class="job-posted">Publicado em 09/08</p>
+                        </div>
+                    </div>
+                    <div class="job-card-body">
+                        <ul class="job-details-list">
+                            <li><i class="fas fa-money-bill-wave"></i> R$ 6.000,00 / projeto</li>
+                            <li><i class="fas fa-clock"></i> Meio período</li>
+                            <li><i class="fas fa-users"></i> 1 Vaga(s)</li>
+                        </ul>
+                        <div class="job-benefits">
+                            <span class="benefit-tag">Por tarefa</span>
+                        </div>
+                        <p class="job-summary">
+                            Desenvolvimento de projetos de pesquisa científica, com foco em análise de dados e publicação de artigos...
+                        </p>
+                        <a href="#" class="job-link-button">Ver Vaga Completa</a>
+                    </div>
+                </article>
+
+                <article class="job-list-card" data-cidade="Porto Velho" data-experiencia="Precisa de Experiência" data-tipo-vaga="Tempo integral" data-salario-minimo="3000" data-salario-tipo="Quinzenal" data-escolaridade="Superior incompleto" data-local="Presencial" data-pcd="false">
+                    <div class="job-card-header">
+                        <div class="company-logo">
+                            <i class="fas fa-user-cog"></i>
+                        </div>
+                        <div class="job-info">
+                            <h3 class="job-title">Analista de TI</h3>
+                            <p class="job-location"><i class="fas fa-map-marker-alt"></i> Porto Velho</p>
+                            <p class="job-posted">Publicado em 08/08</p>
+                        </div>
+                    </div>
+                    <div class="job-card-body">
+                        <ul class="job-details-list">
+                            <li><i class="fas fa-money-bill-wave"></i> R$ 1.500,00 / quinzenal</li>
+                            <li><i class="fas fa-clock"></i> Tempo integral</li>
+                            <li><i class="fas fa-users"></i> 1 Vaga(s)</li>
+                        </ul>
+                        <div class="job-benefits">
+                            <span class="benefit-tag">Quinzenal</span>
+                        </div>
+                        <p class="job-summary">
+                            Suporte técnico e manutenção de sistemas e redes, com experiência em infraestrutura de TI...
+                        </p>
+                        <a href="#" class="job-link-button">Ver Vaga Completa</a>
+                    </div>
+                </article>
+
+                <article class="job-list-card" data-cidade="Ariquemes" data-experiencia="Não Precisa de Experiência" data-tipo-vaga="Temporário" data-salario-minimo="1000" data-salario-tipo="Por produção" data-escolaridade="Fundamental completo" data-local="Presencial" data-pcd="false">
+                    <div class="job-card-header">
+                        <div class="company-logo">
+                            <i class="fas fa-tshirt"></i>
+                        </div>
+                        <div class="job-info">
+                            <h3 class="job-title">Costureiro(a)</h3>
+                            <p class="job-location"><i class="fas fa-map-marker-alt"></i> Ariquemes</p>
+                            <p class="job-posted">Publicado em 07/08</p>
+                        </div>
+                    </div>
+                    <div class="job-card-body">
+                        <ul class="job-details-list">
+                            <li><i class="fas fa-money-bill-wave"></i> R$ 10,00 / peça</li>
+                            <li><i class="fas fa-clock"></i> Temporário</li>
+                            <li><i class="fas fa-users"></i> 2 Vaga(s)</li>
+                        </ul>
+                        <div class="job-benefits">
+                            <span class="benefit-tag">Por produção</span>
+                        </div>
+                        <p class="job-summary">
+                            Confecção de peças de vestuário em linha de produção, com experiência em máquinas industriais...
+                        </p>
+                        <a href="#" class="job-link-button">Ver Vaga Completa</a>
+                    </div>
+                </article>
+
+                <article class="job-list-card" data-cidade="Remoto" data-experiencia="Não Precisa de Experiência" data-tipo-vaga="Tempo integral" data-salario-minimo="1000" data-salario-tipo="Mensal" data-escolaridade="Fundamental completo" data-local="Remoto" data-pcd="false">
+                    <div class="job-card-header">
+                        <div class="company-logo">
+                            <i class="fas fa-school"></i>
+                        </div>
+                        <div class="job-info">
+                            <h3 class="job-title">Monitor de Ensino</h3>
+                            <p class="job-location"><i class="fas fa-map-marker-alt"></i> Remoto</p>
+                            <p class="job-posted">Publicado em 06/08</p>
+                        </div>
+                    </div>
+                    <div class="job-card-body">
+                        <ul class="job-details-list">
+                            <li><i class="fas fa-money-bill-wave"></i> R$ 1.500,00</li>
+                            <li><i class="fas fa-clock"></i> Tempo integral</li>
+                            <li><i class="fas fa-users"></i> 1 Vaga(s)</li>
+                        </ul>
+                        <div class="job-benefits">
+                            <span class="benefit-tag">Plano de Saúde</span>
+                        </div>
+                        <p class="job-summary">
+                            Suporte a alunos em plataforma EAD, auxiliando com dúvidas e problemas técnicos...
+                        </p>
+                        <a href="#" class="job-link-button">Ver Vaga Completa</a>
+                    </div>
+                </article>
+
+                <article class="job-list-card" data-cidade="Porto Velho" data-experiencia="Precisa de Experiência" data-tipo-vaga="Tempo integral" data-salario-minimo="2000" data-salario-tipo="Diária" data-escolaridade="Médio completo" data-local="Presencial" data-pcd="false">
+                    <div class="job-card-header">
+                        <div class="company-logo">
+                            <i class="fas fa-user-md"></i>
+                        </div>
+                        <div class="job-info">
+                            <h3 class="job-title">Técnico em Radiologia</h3>
+                            <p class="job-location"><i class="fas fa-map-marker-alt"></i> Porto Velho</p>
+                            <p class="job-posted">Publicado em 05/08</p>
+                        </div>
+                    </div>
+                    <div class="job-card-body">
+                        <ul class="job-details-list">
+                            <li><i class="fas fa-money-bill-wave"></i> R$ 100,00 / dia</li>
+                            <li><i class="fas fa-clock"></i> Tempo integral</li>
+                            <li><i class="fas fa-users"></i> 1 Vaga(s)</li>
+                        </ul>
+                        <div class="job-benefits">
+                            <span class="benefit-tag">Diária</span>
+                        </div>
+                        <p class="job-summary">
+                            Realização de exames de imagem e suporte à equipe médica...
+                        </p>
+                        <a href="#" class="job-link-button">Ver Vaga Completa</a>
+                    </div>
+                </article>
+
+                <article class="job-list-card" data-cidade="Ji-Paraná" data-experiencia="Não Precisa de Experiência" data-tipo-vaga="Aprendiz" data-salario-minimo="1000" data-salario-tipo="Mensal" data-escolaridade="Fundamental completo" data-local="Presencial" data-pcd="false">
+                    <div class="job-card-header">
+                        <div class="company-logo">
+                            <i class="fas fa-briefcase"></i>
+                        </div>
+                        <div class="job-info">
+                            <h3 class="job-title">Aprendiz de Vendas</h3>
+                            <p class="job-location"><i class="fas fa-map-marker-alt"></i> Ji-Paraná</p>
+                            <p class="job-posted">Publicado em 04/08</p>
+                        </div>
+                    </div>
+                    <div class="job-card-body">
+                        <ul class="job-details-list">
+                            <li><i class="fas fa-money-bill-wave"></i> R$ 1.000,00</li>
+                            <li><i class="fas fa-clock"></i> Meio período</li>
+                            <li><i class="fas fa-users"></i> 1 Vaga(s)</li>
+                        </ul>
+                        <div class="job-benefits">
+                            <span class="benefit-tag">Aprendiz</span>
+                            <span class="benefit-tag">Comissão</span>
+                        </div>
+                        <p class="job-summary">
+                            Suporte à equipe de vendas, organização de produtos e atendimento inicial ao cliente...
+                        </p>
+                        <a href="#" class="job-link-button">Ver Vaga Completa</a>
+                    </div>
+                </article>
+
+                <article class="job-list-card" data-cidade="Vilhena" data-experiencia="Não Precisa de Experiência" data-tipo-vaga="Estágio" data-salario-minimo="1000" data-salario-tipo="Mensal" data-escolaridade="Superior incompleto" data-local="Presencial" data-pcd="false">
+                    <div class="job-card-header">
+                        <div class="company-logo">
+                            <i class="fas fa-user-graduate"></i>
+                        </div>
+                        <div class="job-info">
+                            <h3 class="job-title">Estagiário de Engenharia Civil</h3>
+                            <p class="job-location"><i class="fas fa-map-marker-alt"></i> Vilhena</p>
+                            <p class="job-posted">Publicado em 03/08</p>
+                        </div>
+                    </div>
+                    <div class="job-card-body">
+                        <ul class="job-details-list">
+                            <li><i class="fas fa-money-bill-wave"></i> R$ 1.500,00</li>
+                            <li><i class="fas fa-clock"></i> Meio período</li>
+                            <li><i class="fas fa-users"></i> 1 Vaga(s)</li>
+                        </ul>
+                        <div class="job-benefits">
+                            <span class="benefit-tag">Estágio</span>
+                        </div>
+                        <p class="job-summary">
+                            Acompanhamento de obras, medição e elaboração de relatórios técnicos...
+                        </p>
+                        <a href="#" class="job-link-button">Ver Vaga Completa</a>
+                    </div>
+                </article>
+
+                <article class="job-list-card" data-cidade="Porto Velho" data-experiencia="Não Precisa de Experiência" data-tipo-vaga="Tempo integral" data-salario-minimo="1000" data-salario-tipo="Por tarefa" data-escolaridade="Analfabeto" data-local="Presencial" data-pcd="false">
+                    <div class="job-card-header">
+                        <div class="company-logo">
+                            <i class="fas fa-hands-helping"></i>
+                        </div>
+                        <div class="job-info">
+                            <h3 class="job-title">Ajudante de Carga</h3>
+                            <p class="job-location"><i class="fas fa-map-marker-alt"></i> Porto Velho</p>
+                            <p class="job-posted">Publicado em 02/08</p>
+                        </div>
+                    </div>
+                    <div class="job-card-body">
+                        <ul class="job-details-list">
+                            <li><i class="fas fa-money-bill-wave"></i> R$ 80,00 / tarefa</li>
+                            <li><i class="fas fa-clock"></i> Tempo integral</li>
+                            <li><i class="fas fa-users"></i> 3 Vaga(s)</li>
+                        </ul>
+                        <div class="job-benefits">
+                            <span class="benefit-tag">Por tarefa</span>
+                        </div>
+                        <p class="job-summary">
+                            Ajudar no carregamento e descarregamento de materiais em veículos e depósitos...
+                        </p>
+                        <a href="#" class="job-link-button">Ver Vaga Completa</a>
+                    </div>
+                </article>
+
+                <article class="job-list-card" data-cidade="Ariquemes" data-experiencia="Não Precisa de Experiência" data-tipo-vaga="Primeiro emprego" data-salario-minimo="1000" data-salario-tipo="Mensal" data-escolaridade="Médio completo" data-local="Presencial" data-pcd="false">
+                    <div class="job-card-header">
+                        <div class="company-logo">
+                            <i class="fas fa-user-check"></i>
+                        </div>
+                        <div class="job-info">
+                            <h3 class="job-title">Auxiliar de Escritório</h3>
+                            <p class="job-location"><i class="fas fa-map-marker-alt"></i> Ariquemes</p>
+                            <p class="job-posted">Publicado em 01/08</p>
+                        </div>
+                    </div>
+                    <div class="job-card-body">
+                        <ul class="job-details-list">
+                            <li><i class="fas fa-money-bill-wave"></i> R$ 1.500,00</li>
+                            <li><i class="fas fa-clock"></i> Tempo integral</li>
+                            <li><i class="fas fa-users"></i> 1 Vaga(s)</li>
+                        </ul>
+                        <div class="job-benefits">
+                            <span class="benefit-tag">Primeiro emprego</span>
+                            <span class="benefit-tag">Vale-Alimentação</span>
+                        </div>
+                        <p class="job-summary">
+                            Rotinas administrativas e de escritório, organização de arquivos e atendimento telefônico...
+                        </p>
+                        <a href="#" class="job-link-button">Ver Vaga Completa</a>
+                    </div>
+                </article>
+
+                <article class="job-list-card" data-cidade="Cacoal" data-experiencia="Precisa de Experiência" data-tipo-vaga="Tempo integral" data-salario-minimo="3000" data-salario-tipo="Hora" data-escolaridade="Superior completo" data-local="Presencial" data-pcd="false">
+                    <div class="job-card-header">
+                        <div class="company-logo">
+                            <i class="fas fa-chalkboard-teacher"></i>
+                        </div>
+                        <div class="job-info">
+                            <h3 class="job-title">Professor de Idiomas</h3>
+                            <p class="job-location"><i class="fas fa-map-marker-alt"></i> Cacoal</p>
+                            <p class="job-posted">Publicado em 31/07</p>
+                        </div>
+                    </div>
+                    <div class="job-card-body">
+                        <ul class="job-details-list">
+                            <li><i class="fas fa-money-bill-wave"></i> R$ 35,00 / hora</li>
+                            <li><i class="fas fa-clock"></i> Tempo integral</li>
+                            <li><i class="fas fa-users"></i> 1 Vaga(s)</li>
+                        </ul>
+                        <div class="job-benefits">
+                            <span class="benefit-tag">Hora</span>
+                        </div>
+                        <p class="job-summary">
+                            Ministrar aulas de inglês e espanhol para adultos e crianças, com experiência comprovada...
+                        </p>
+                        <a href="#" class="job-link-button">Ver Vaga Completa</a>
+                    </div>
+                </article>
+
+                <article class="job-list-card" data-cidade="Ji-Paraná" data-experiencia="Precisa de Experiência" data-tipo-vaga="Tempo integral" data-salario-minimo="4000" data-salario-tipo="Quinzenal" data-escolaridade="Superior incompleto" data-local="Presencial" data-pcd="false">
+                    <div class="job-card-header">
+                        <div class="company-logo">
+                            <i class="fas fa-microscope"></i>
+                        </div>
+                        <div class="job-info">
+                            <h3 class="job-title">Químico Industrial</h3>
+                            <p class="job-location"><i class="fas fa-map-marker-alt"></i> Ji-Paraná</p>
+                            <p class="job-posted">Publicado em 30/07</p>
+                        </div>
+                    </div>
+                    <div class="job-card-body">
+                        <ul class="job-details-list">
+                            <li><i class="fas fa-money-bill-wave"></i> R$ 2.000,00 / quinzenal</li>
+                            <li><i class="fas fa-clock"></i> Tempo integral</li>
+                            <li><i class="fas fa-users"></i> 1 Vaga(s)</li>
+                        </ul>
+                        <div class="job-benefits">
+                            <span class="benefit-tag">Quinzenal</span>
+                        </div>
+                        <p class="job-summary">
+                            Controle de qualidade de produtos, desenvolvimento de novas fórmulas e gestão de laboratório...
+                        </p>
+                        <a href="#" class="job-link-button">Ver Vaga Completa</a>
+                    </div>
+                </article>
+
+                <article class="job-list-card" data-cidade="Porto Velho" data-experiencia="Precisa de Experiência" data-tipo-vaga="Tempo integral" data-salario-minimo="1000" data-salario-tipo="Diária" data-escolaridade="Médio completo" data-local="Presencial" data-pcd="false">
+                    <div class="job-card-header">
+                        <div class="company-logo">
+                            <i class="fas fa-concierge-bell"></i>
+                        </div>
+                        <div class="job-info">
+                            <h3 class="job-title">Garçom</h3>
+                            <p class="job-location"><i class="fas fa-map-marker-alt"></i> Porto Velho</p>
+                            <p class="job-posted">Publicado em 29/07</p>
+                        </div>
+                    </div>
+                    <div class="job-card-body">
+                        <ul class="job-details-list">
+                            <li><i class="fas fa-money-bill-wave"></i> R$ 80,00 / dia</li>
+                            <li><i class="fas fa-clock"></i> Tempo integral</li>
+                            <li><i class="fas fa-users"></i> 3 Vaga(s)</li>
+                        </ul>
+                        <div class="job-benefits">
+                            <span class="benefit-tag">Diária</span>
+                        </div>
+                        <p class="job-summary">
+                            Atendimento aos clientes, anotação de pedidos e serviço de mesas em restaurante...
+                        </p>
+                        <a href="#" class="job-link-button">Ver Vaga Completa</a>
+                    </div>
+                </article>
+
+                <article class="job-list-card" data-cidade="Remoto" data-experiencia="Precisa de Experiência" data-tipo-vaga="Freelance" data-salario-minimo="3000" data-salario-tipo="Por tarefa" data-escolaridade="Doutorado" data-local="Remoto" data-pcd="false">
+                    <div class="job-card-header">
+                        <div class="company-logo">
+                            <i class="fas fa-user-secret"></i>
+                        </div>
+                        <div class="job-info">
+                            <h3 class="job-title">Consultor de Cibersegurança</h3>
+                            <p class="job-location"><i class="fas fa-map-marker-alt"></i> Remoto</p>
+                            <p class="job-posted">Publicado em 28/07</p>
+                        </div>
+                    </div>
+                    <div class="job-card-body">
+                        <ul class="job-details-list">
+                            <li><i class="fas fa-money-bill-wave"></i> R$ 5.000,00 / projeto</li>
+                            <li><i class="fas fa-clock"></i> Freelance</li>
+                            <li><i class="fas fa-users"></i> 1 Vaga(s)</li>
+                        </ul>
+                        <div class="job-benefits">
+                            <span class="benefit-tag">Por tarefa</span>
+                        </div>
+                        <p class="job-summary">
+                            Análise e avaliação de segurança de sistemas, com elaboração de relatórios técnicos...
+                        </p>
+                        <a href="#" class="job-link-button">Ver Vaga Completa</a>
+                    </div>
+                </article>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-column footer-branding">
+                        <img src="https://geracaoemprego.ro.gov.br/static/media/logo_header.c6f84656.png" alt="Logo Geração Emprego">
+                        <p class="footer-slogan">A maior plataforma profissional do Estado de Rondônia, conectando talentos e oportunidades.</p>
+                    </div>
+                    <div class="footer-column">
+                        <h3 class="footer-heading">Sobre</h3>
+                        <ul class="footer-links">
+                            <li><a href="#">Termos de Uso</a></li>
+                            <li><a href="#">Políticas de Privacidade</a></li>
+                            <li><a href="#">Perguntas Frequentes</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3 class="footer-heading">Serviços</h3>
+                        <ul class="footer-links">
+                            <li><a href="#">Quero Currículos</a></li>
+                            <li><a href="#">Divulgar Vagas</a></li>
+                            <li><a href="#">Encontrar Cursos</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3 class="footer-heading">Ajuda</h3>
+                        <ul class="footer-links">
+                            <li><a href="#"><i class="fab fa-whatsapp"></i> Fale conosco pelo WhatsApp</a></li>
+                            <li><a href="#"><i class="fas fa-envelope"></i> suporte@geracaoemprego.ro.gov.br</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3 class="footer-heading">Redes Sociais</h3>
+                        <div class="social-media-icons">
+                            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>© 2025 Governo do Estado de Rondônia. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="index.js"></script>
+    <script src="vagas.js"></script>
+
+</body>
+</html>

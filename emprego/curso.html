@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cursos de Qualificação - Geração Emprego</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="curso.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+
+    <header class="emprego-header">
+        <div class="container header-content">
+            <div class="branding-area">
+                <a href="index.html" class="emprego-branding">
+                    <img src="https://geracaoemprego.ro.gov.br/static/media/logo_header.c6f84656.png" alt="Logo Geração Emprego">
+                </a>
+                <div class="header-actions">
+                    <a href="#" class="button-secondary">Entrar</a>
+                    <a href="#" class="button-primary">Cadastre-se</a>
+                </div>
+            </div>
+            <nav class="emprego-navigation">
+                <ul>
+                    <li><a href="index.html"><i class="fa-solid fa-house"></i> Home</a></li>
+                    <li><a href="#"><i class="fa-solid fa-magnifying-glass-chart"></i> Buscar Currículos</a></li>
+                    <li><a href="vagas.html"><i class="fa-solid fa-briefcase"></i> Vagas</a></li>
+                    <li><a href="curso.html" class="active"><i class="fa-solid fa-graduation-cap"></i> Cursos</a></li>
+                    <li><a href="#"><i class="fa-solid fa-file-lines"></i> Editais</a></li>
+                    <li><a href="#"><i class="fa-solid fa-building"></i> Empresas</a></li>
+                </ul>
+            </nav>
+            <button class="mobile-nav-toggle" aria-label="Abrir menu">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+        </div>
+    </header>
+
+    <div class="mobile-navigation" id="mobile-navigation">
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="#">Buscar Currículos</a>
+            <a href="vagas.html">Vagas</a>
+            <a href="curso.html">Cursos</a>
+            <a href="#">Editais</a>
+            <a href="#">Empresas</a>
+        </nav>
+        <div class="mobile-actions">
+            <a href="#" class="button-secondary">Entrar</a>
+            <a href="#" class="button-primary">Cadastre-se</a>
+        </div>
+    </div>
+
+    <main class="curso-main-content">
+        <div class="container curso-grid-container">
+            <aside class="curso-sidebar">
+                <div class="sidebar-header">
+                    <i class="fas fa-filter sidebar-icon"></i>
+                    <h3>Filtros</h3>
+                </div>
+                <section class="filter-group">
+                    <h4>Filtros Aplicados</h4>
+                    <div class="filter-tags">
+                        </div>
+                    <a href="#" class="reset-filters">Redefinir filtros</a>
+                </section>
+                <div class="search-filter">
+                    <input type="text" placeholder="Buscar por palavra-chave">
+                    <button type="submit"><i class="fas fa-search"></i></button>
+                </div>
+                <details class="filter-accordion" open>
+                    <summary>
+                        <i class="fas fa-list-ul"></i>
+                        <span>Categorias</span>
+                    </summary>
+                    <div class="accordion-content">
+                        <label class="checkbox-option"><input type="checkbox" name="categoria"> Todas as categorias</label>
+                        <label class="checkbox-option"><input type="checkbox" name="categoria"> Atendimento e Vendas</label>
+                        <label class="checkbox-option"><input type="checkbox" name="categoria"> Capacitação</label>
+                        <label class="checkbox-option"><input type="checkbox" name="categoria"> Beleza, Saúde e Bem Estar</label>
+                        <label class="checkbox-option"><input type="checkbox" name="categoria"> Cozinha e Gastronomia</label>
+                        <label class="checkbox-option"><input type="checkbox" name="categoria"> Desenvolvimento Pessoal</label>
+                        <label class="checkbox-option"><input type="checkbox" name="categoria"> Marketing e Comunicação</label>
+                        <label class="checkbox-option"><input type="checkbox" name="categoria"> Recursos Humanos</label>
+                        <label class="checkbox-option"><input type="checkbox" name="categoria"> Tecnologia</label>
+                        <label class="checkbox-option"><input type="checkbox" name="categoria"> Turismo e Hotelaria</label>
+                    </div>
+                </details>
+                <details class="filter-accordion">
+                    <summary>
+                        <i class="fas fa-city"></i>
+                        <span>Cidades</span>
+                    </summary>
+                    <div class="accordion-content">
+                         <label class="checkbox-option"><input type="checkbox" name="cidade"> Rondônia</label>
+                         <label class="checkbox-option"><input type="checkbox" name="cidade"> Porto Velho</label>
+                         <label class="checkbox-option"><input type="checkbox" name="cidade"> Ji-Paraná</label>
+                         <label class="checkbox-option"><input type="checkbox" name="cidade"> Ariquemes</label>
+                         <label class="checkbox-option"><input type="checkbox" name="cidade"> Vilhena</label>
+                         <label class="checkbox-option"><input type="checkbox" name="cidade"> Cacoal</label>
+                         <label class="checkbox-option"><input type="checkbox" name="cidade"> Rolim de Moura</label>
+                    </div>
+                </details>
+                <div class="filter-actions">
+                    <button class="button-primary">Aplicar filtros</button>
+                </div>
+            </aside>
+
+            <div class="curso-content-area">
+                <button class="toggle-filter-btn">
+                    <i class="fas fa-filter"></i>
+                    <span>Filtros</span>
+                </button>
+                <div class="curso-stats-bar">
+                    <h2 class="results-heading">Mostrando 5 cursos</h2>
+                    <div class="toolbar-search">
+                        <input type="text" placeholder="Pesquisar por curso">
+                        <i class="fas fa-search"></i>
+                    </div>
+                </div>
+
+                <div class="curso-list">
+                    <article class="curso-list-card" data-categoria="Tecnologia e Comunicação" data-cidade="Online">
+                        <div class="curso-card-header">
+                            <div class="curso-info">
+                                <h3 class="curso-title">PocCast: Nova Área Tech Que Paga Bem!</h3>
+                                <p class="curso-category"><i class="fas fa-laptop-code"></i> Tecnologia e Comunicação</p>
+                            </div>
+                        </div>
+                        <div class="curso-card-body">
+                            <p class="curso-summary">Revelamos uma das novas áreas em alta no setor de tecnologia que oferece excelentes salários e grande demanda por profissionais...</p>
+                            <ul class="curso-details-list">
+                                <li><i class="fas fa-money-bill-wave"></i> Grátis</li>
+                                <li><i class="fas fa-clock"></i> 1 horas</li>
+                                <li><i class="fas fa-calendar-alt"></i> Inscrições até 28/01/2028</li>
+                            </ul>
+                            <a href="#" class="curso-link-button">Ver Curso</a>
+                        </div>
+                    </article>
+
+                    <article class="curso-list-card" data-categoria="Desenvolvimento Pessoal e Capacitação" data-cidade="Online">
+                        <div class="curso-card-header">
+                            <div class="curso-info">
+                                <h3 class="curso-title">Inteligência Emocional</h3>
+                                <p class="curso-category"><i class="fas fa-brain"></i> Desenvolvimento Pessoal e Capacitação</p>
+                            </div>
+                        </div>
+                        <div class="curso-card-body">
+                            <p class="curso-summary">A Inteligencia emcional é fundamental para o seu cotidiano. Neste curso vamos aprender a trabalhar a inteligencia emocional...</p>
+                            <ul class="curso-details-list">
+                                <li><i class="fas fa-money-bill-wave"></i> Grátis</li>
+                                <li><i class="fas fa-clock"></i> 1 horas</li>
+                                <li><i class="fas fa-calendar-alt"></i> Inscrições até 02/01/2027</li>
+                            </ul>
+                            <a href="#" class="curso-link-button">Ver Curso</a>
+                        </div>
+                    </article>
+
+                    <article class="curso-list-card" data-categoria="Atendimento, Gestão e Venda" data-cidade="Online">
+                        <div class="curso-card-header">
+                            <div class="curso-info">
+                                <h3 class="curso-title">Excelência no Atendimento ao Cliente</h3>
+                                <p class="curso-category"><i class="fas fa-handshake"></i> Atendimento, Gestão e Venda</p>
+                            </div>
+                        </div>
+                        <div class="curso-card-body">
+                            <p class="curso-summary">Review do Curso Excelência no Atendimento ao Cliente...</p>
+                            <ul class="curso-details-list">
+                                <li><i class="fas fa-money-bill-wave"></i> Grátis</li>
+                                <li><i class="fas fa-clock"></i> 1 horas</li>
+                                <li><i class="fas fa-calendar-alt"></i> Inscrições até 05/01/2026</li>
+                            </ul>
+                            <a href="#" class="curso-link-button">Ver Curso</a>
+                        </div>
+                    </article>
+
+                    <article class="curso-list-card" data-categoria="Cozinha e Gastronomia" data-cidade="Online">
+                        <div class="curso-card-header">
+                            <div class="curso-info">
+                                <h3 class="curso-title">Técnico de cozinha II</h3>
+                                <p class="curso-category"><i class="fas fa-utensils"></i> Cozinha e Gastronomia</p>
+                            </div>
+                        </div>
+                        <div class="curso-card-body">
+                            <p class="curso-summary">Depois de muito aprendizado e técnicas básicas, chegou a hora de arriscar um pouco mais e chegar no módulo intermediário do curso Técnico de cozinha...</p>
+                            <ul class="curso-details-list">
+                                <li><i class="fas fa-money-bill-wave"></i> Grátis</li>
+                                <li><i class="fas fa-clock"></i> 10 horas</li>
+                                <li><i class="fas fa-calendar-alt"></i> Inscrições até 31/12/2025</li>
+                            </ul>
+                            <a href="#" class="curso-link-button">Ver Curso</a>
+                        </div>
+                    </article>
+                    
+                    <article class="curso-list-card" data-categoria="Beleza, Saúde e Bem Estar" data-cidade="Online">
+                        <div class="curso-card-header">
+                            <div class="curso-info">
+                                <h3 class="curso-title">Maquiagem para pele madura: conceito e técnicas</h3>
+                                <p class="curso-category"><i class="fas fa-spa"></i> Beleza, Saúde e Bem Estar</p>
+                            </div>
+                        </div>
+                        <div class="curso-card-body">
+                            <p class="curso-summary">Neste curso, o aluno aprenderá a desenvolver de forma diferenciada uma maquiagem com grandes resultados para pele madura...</p>
+                            <ul class="curso-details-list">
+                                <li><i class="fas fa-money-bill-wave"></i> Grátis</li>
+                                <li><i class="fas fa-clock"></i> 5 horas</li>
+                                <li><i class="fas fa-calendar-alt"></i> Inscrições até 31/12/2025</li>
+                            </ul>
+                            <a href="#" class="curso-link-button">Ver Curso</a>
+                        </div>
+                    </article>
+                    <article class="curso-list-card" data-categoria="Marketing e Comunicação" data-cidade="Porto Velho">
+                        <div class="curso-card-header">
+                            <div class="curso-info">
+                                <h3 class="curso-title">Marketing Digital na Prática</h3>
+                                <p class="curso-category"><i class="fas fa-bullhorn"></i> Marketing e Comunicação</p>
+                            </div>
+                        </div>
+                        <div class="curso-card-body">
+                            <p class="curso-summary">Aprenda a criar e gerenciar campanhas de marketing digital, com foco em mídias sociais e SEO. Curso prático com estudos de caso reais...</p>
+                            <ul class="curso-details-list">
+                                <li><i class="fas fa-money-bill-wave"></i> Grátis</li>
+                                <li><i class="fas fa-clock"></i> 8 horas</li>
+                                <li><i class="fas fa-calendar-alt"></i> Inscrições até 15/10/2025</li>
+                            </ul>
+                            <a href="#" class="curso-link-button">Ver Curso</a>
+                        </div>
+                    </article>
+
+                    <article class="curso-list-card" data-categoria="Recursos Humanos" data-cidade="Ji-Paraná">
+                        <div class="curso-card-header">
+                            <div class="curso-info">
+                                <h3 class="curso-title">Recrutamento e Seleção por Competências</h3>
+                                <p class="curso-category"><i class="fas fa-users"></i> Recursos Humanos</p>
+                            </div>
+                        </div>
+                        <div class="curso-card-body">
+                            <p class="curso-summary">Desenvolva habilidades para atrair e selecionar os melhores talentos do mercado, utilizando a metodologia de entrevista por competências...</p>
+                            <ul class="curso-details-list">
+                                <li><i class="fas fa-money-bill-wave"></i> Grátis</li>
+                                <li><i class="fas fa-clock"></i> 6 horas</li>
+                                <li><i class="fas fa-calendar-alt"></i> Inscrições até 30/11/2025</li>
+                            </ul>
+                            <a href="#" class="curso-link-button">Ver Curso</a>
+                        </div>
+                    </article>
+
+                    <article class="curso-list-card" data-categoria="Atendimento e Vendas" data-cidade="Ariquemes">
+                        <div class="curso-card-header">
+                            <div class="curso-info">
+                                <h3 class="curso-title">Técnicas de Negociação e Vendas</h3>
+                                <p class="curso-category"><i class="fas fa-handshake"></i> Atendimento e Vendas</p>
+                            </div>
+                        </div>
+                        <div class="curso-card-body">
+                            <p class="curso-summary">Aprimore suas técnicas de persuasão e fechamento de vendas, aprendendo a identificar as necessidades do cliente e a superar objeções...</p>
+                            <ul class="curso-details-list">
+                                <li><i class="fas fa-money-bill-wave"></i> Grátis</li>
+                                <li><i class="fas fa-clock"></i> 4 horas</li>
+                                <li><i class="fas fa-calendar-alt"></i> Inscrições até 01/12/2025</li>
+                            </ul>
+                            <a href="#" class="curso-link-button">Ver Curso</a>
+                        </div>
+                    </article>
+
+                    <article class="curso-list-card" data-categoria="Capacitação" data-cidade="Vilhena">
+                        <div class="curso-card-header">
+                            <div class="curso-info">
+                                <h3 class="curso-title">Oratória e Apresentações de Impacto</h3>
+                                <p class="curso-category"><i class="fas fa-microphone"></i> Capacitação</p>
+                            </div>
+                        </div>
+                        <div class="curso-card-body">
+                            <p class="curso-summary">Perca o medo de falar em público e aprenda a estruturar apresentações que cativam e convencem sua audiência...</p>
+                            <ul class="curso-details-list">
+                                <li><i class="fas fa-money-bill-wave"></i> Grátis</li>
+                                <li><i class="fas fa-clock"></i> 3 horas</li>
+                                <li><i class="fas fa-calendar-alt"></i> Inscrições até 10/11/2025</li>
+                            </ul>
+                            <a href="#" class="curso-link-button">Ver Curso</a>
+                        </div>
+                    </article>
+
+                    <article class="curso-list-card" data-categoria="Turismo e Hotelaria" data-cidade="Cacoal">
+                        <div class="curso-card-header">
+                            <div class="curso-info">
+                                <h3 class="curso-title">Gestão de Pousadas e Hotéis</h3>
+                                <p class="curso-category"><i class="fas fa-concierge-bell"></i> Turismo e Hotelaria</p>
+                            </div>
+                        </div>
+                        <div class="curso-card-body">
+                            <p class="curso-summary">Curso voltado para a administração de pequenos e médios estabelecimentos hoteleiros, cobrindo desde a recepção até a gestão financeira...</p>
+                            <ul class="curso-details-list">
+                                <li><i class="fas fa-money-bill-wave"></i> Grátis</li>
+                                <li><i class="fas fa-clock"></i> 12 horas</li>
+                                <li><i class="fas fa-calendar-alt"></i> Inscrições até 20/09/2025</li>
+                            </ul>
+                            <a href="#" class="curso-link-button">Ver Curso</a>
+                        </div>
+                    </article>
+
+                    <article class="curso-list-card" data-categoria="Desenvolvimento Pessoal" data-cidade="Rolim de Moura">
+                        <div class="curso-card-header">
+                            <div class="curso-info">
+                                <h3 class="curso-title">Produtividade e Gestão do Tempo</h3>
+                                <p class="curso-category"><i class="fas fa-hourglass-half"></i> Desenvolvimento Pessoal</p>
+                            </div>
+                        </div>
+                        <div class="curso-card-body">
+                            <p class="curso-summary">Aprenda a organizar suas tarefas, definir prioridades e utilizar ferramentas que aumentarão sua produtividade no dia a dia...</p>
+                            <ul class="curso-details-list">
+                                <li><i class="fas fa-money-bill-wave"></i> Grátis</li>
+                                <li><i class="fas fa-clock"></i> 2 horas</li>
+                                <li><i class="fas fa-calendar-alt"></i> Inscrições até 05/10/2025</li>
+                            </ul>
+                            <a href="#" class="curso-link-button">Ver Curso</a>
+                        </div>
+                    </article>
+
+                    <article class="curso-list-card" data-categoria="Beleza, Saúde e Bem Estar" data-cidade="Ji-Paraná">
+                        <div class="curso-card-header">
+                            <div class="curso-info">
+                                <h3 class="curso-title">Primeiros Socorros para o Dia a Dia</h3>
+                                <p class="curso-category"><i class="fas fa-first-aid"></i> Beleza, Saúde e Bem Estar</p>
+                            </div>
+                        </div>
+                        <div class="curso-card-body">
+                            <p class="curso-summary">Capacitação essencial para saber como agir em situações de emergência, como engasgos, queimaduras e paradas cardiorrespiratórias...</p>
+                            <ul class="curso-details-list">
+                                <li><i class="fas fa-money-bill-wave"></i> Grátis</li>
+                                <li><i class="fas fa-clock"></i> 4 horas</li>
+                                <li><i class="fas fa-calendar-alt"></i> Inscrições até 25/11/2025</li>
+                            </ul>
+                            <a href="#" class="curso-link-button">Ver Curso</a>
+                        </div>
+                    </article>
+
+                    <article class="curso-list-card" data-categoria="Tecnologia" data-cidade="Online">
+                        <div class="curso-card-header">
+                            <div class="curso-info">
+                                <h3 class="curso-title">Introdução à Lógica de Programação</h3>
+                                <p class="curso-category"><i class="fas fa-terminal"></i> Tecnologia</p>
+                            </div>
+                        </div>
+                        <div class="curso-card-body">
+                            <p class="curso-summary">Dê seus primeiros passos no mundo da programação. Este curso aborda os conceitos fundamentais de lógica e algoritmos...</p>
+                            <ul class="curso-details-list">
+                                <li><i class="fas fa-money-bill-wave"></i> Grátis</li>
+                                <li><i class="fas fa-clock"></i> 10 horas</li>
+                                <li><i class="fas fa-calendar-alt"></i> Inscrições até 18/12/2025</li>
+                            </ul>
+                            <a href="#" class="curso-link-button">Ver Curso</a>
+                        </div>
+                    </article>
+
+                    <article class="curso-list-card" data-categoria="Cozinha e Gastronomia" data-cidade="Porto Velho">
+                        <div class="curso-card-header">
+                            <div class="curso-info">
+                                <h3 class="curso-title">Boas Práticas de Manipulação de Alimentos</h3>
+                                <p class="curso-category"><i class="fas fa-utensils"></i> Cozinha e Gastronomia</p>
+                            </div>
+                        </div>
+                        <div class="curso-card-body">
+                            <p class="curso-summary">Curso obrigatório para profissionais da área de alimentação, focado em higiene, segurança e prevenção de contaminação...</p>
+                            <ul class="curso-details-list">
+                                <li><i class="fas fa-money-bill-wave"></i> Grátis</li>
+                                <li><i class="fas fa-clock"></i> 3 horas</li>
+                                <li><i class="fas fa-calendar-alt"></i> Inscrições até 14/10/2025</li>
+                            </ul>
+                            <a href="#" class="curso-link-button">Ver Curso</a>
+                        </div>
+                    </article>
+
+                    <article class="curso-list-card" data-categoria="Marketing e Comunicação" data-cidade="Online">
+                        <div class="curso-card-header">
+                            <div class="curso-info">
+                                <h3 class="curso-title">Criação de Conteúdo para Instagram</h3>
+                                <p class="curso-category"><i class="fab fa-instagram"></i> Marketing e Comunicação</p>
+                            </div>
+                        </div>
+                        <div class="curso-card-body">
+                            <p class="curso-summary">Aprenda a planejar, criar e publicar conteúdo que engaja no Instagram, desde fotos e vídeos até o uso estratégico de stories e reels...</p>
+                            <ul class="curso-details-list">
+                                <li><i class="fas fa-money-bill-wave"></i> Grátis</li>
+                                <li><i class="fas fa-clock"></i> 5 horas</li>
+                                <li><i class="fas fa-calendar-alt"></i> Inscrições até 22/01/2026</li>
+                            </ul>
+                            <a href="#" class="curso-link-button">Ver Curso</a>
+                        </div>
+                    </article>
+
+                    <article class="curso-list-card" data-categoria="Recursos Humanos" data-cidade="Online">
+                        <div class="curso-card-header">
+                            <div class="curso-info">
+                                <h3 class="curso-title">Comunicação Não-Violenta no Trabalho</h3>
+                                <p class="curso-category"><i class="fas fa-comments"></i> Recursos Humanos</p>
+                            </div>
+                        </div>
+                        <div class="curso-card-body">
+                            <p class="curso-summary">Melhore o clima organizacional e a resolução de conflitos aprendendo os princípios da Comunicação Não-Violenta...</p>
+                            <ul class="curso-details-list">
+                                <li><i class="fas fa-money-bill-wave"></i> Grátis</li>
+                                <li><i class="fas fa-clock"></i> 2 horas</li>
+                                <li><i class="fas fa-calendar-alt"></i> Inscrições até 19/11/2025</li>
+                            </ul>
+                            <a href="#" class="curso-link-button">Ver Curso</a>
+                        </div>
+                    </article>
+
+                    <article class="curso-list-card" data-categoria="Capacitação" data-cidade="Ariquemes">
+                        <div class="curso-card-header">
+                            <div class="curso-info">
+                                <h3 class="curso-title">Manutenção Básica de Computadores</h3>
+                                <p class="curso-category"><i class="fas fa-tools"></i> Capacitação</p>
+                            </div>
+                        </div>
+                        <div class="curso-card-body">
+                            <p class="curso-summary">Aprenda a diagnosticar e resolver problemas comuns de hardware e software, como formatação e instalação de programas...</p>
+                            <ul class="curso-details-list">
+                                <li><i class="fas fa-money-bill-wave"></i> Grátis</li>
+                                <li><i class="fas fa-clock"></i> 8 horas</li>
+                                <li><i class="fas fa-calendar-alt"></i> Inscrições até 03/12/2025</li>
+                            </ul>
+                            <a href="#" class="curso-link-button">Ver Curso</a>
+                        </div>
+                    </article>
+
+                    <article class="curso-list-card" data-categoria="Desenvolvimento Pessoal" data-cidade="Online">
+                        <div class="curso-card-header">
+                            <div class="curso-info">
+                                <h3 class="curso-title">Educação Financeira para Iniciantes</h3>
+                                <p class="curso-category"><i class="fas fa-chart-line"></i> Desenvolvimento Pessoal</p>
+                            </div>
+                        </div>
+                        <div class="curso-card-body">
+                            <p class="curso-summary">Organize suas finanças, saia das dívidas e comece a investir. Um guia prático para quem quer ter controle sobre o próprio dinheiro...</p>
+                            <ul class="curso-details-list">
+                                <li><i class="fas fa-money-bill-wave"></i> Grátis</li>
+                                <li><i class="fas fa-clock"></i> 4 horas</li>
+                                <li><i class="fas fa-calendar-alt"></i> Inscrições até 11/01/2026</li>
+                            </ul>
+                            <a href="#" class="curso-link-button">Ver Curso</a>
+                        </div>
+                    </article>
+
+                    <article class="curso-list-card" data-categoria="Tecnologia" data-cidade="Porto Velho">
+                        <div class="curso-card-header">
+                            <div class="curso-info">
+                                <h3 class="curso-title">Excel Avançado</h3>
+                                <p class="curso-category"><i class="fas fa-file-excel"></i> Tecnologia</p>
+                            </div>
+                        </div>
+                        <div class="curso-card-body">
+                            <p class="curso-summary">Domine as ferramentas mais poderosas do Excel, como tabelas dinâmicas, macros e funções avançadas para análise de dados...</p>
+                            <ul class="curso-details-list">
+                                <li><i class="fas fa-money-bill-wave"></i> Grátis</li>
+                                <li><i class="fas fa-clock"></i> 15 horas</li>
+                                <li><i class="fas fa-calendar-alt"></i> Inscrições até 28/02/2026</li>
+                            </ul>
+                            <a href="#" class="curso-link-button">Ver Curso</a>
+                        </div>
+                    </article>
+
+                    <article class="curso-list-card" data-categoria="Atendimento e Vendas" data-cidade="Ji-Paraná">
+                        <div class="curso-card-header">
+                            <div class="curso-info">
+                                <h3 class="curso-title">Operador de Caixa</h3>
+                                <p class="curso-category"><i class="fas fa-cash-register"></i> Atendimento e Vendas</p>
+                            </div>
+                        </div>
+                        <div class="curso-card-body">
+                            <p class="curso-summary">Capacitação completa para atuar como operador de caixa, incluindo atendimento, fechamento de caixa e manuseio de diferentes formas de pagamento...</p>
+                            <ul class="curso-details-list">
+                                <li><i class="fas fa-money-bill-wave"></i> Grátis</li>
+                                <li><i class="fas fa-clock"></i> 6 horas</li>
+                                <li><i class="fas fa-calendar-alt"></i> Inscrições até 07/03/2026</li>
+                            </ul>
+                            <a href="#" class="curso-link-button">Ver Curso</a>
+                        </div>
+                    </article>
+
+                    <article class="curso-list-card" data-categoria="Turismo e Hotelaria" data-cidade="Online">
+                        <div class="curso-card-header">
+                            <div class="curso-info">
+                                <h3 class="curso-title">Inglês para Viagens e Hotelaria</h3>
+                                <p class="curso-category"><i class="fas fa-plane-departure"></i> Turismo e Hotelaria</p>
+                            </div>
+                        </div>
+                        <div class="curso-card-body">
+                            <p class="curso-summary">Aprenda o vocabulário e as frases essenciais em inglês para atender turistas e trabalhar em hotéis, aeroportos e agências de viagem...</p>
+                            <ul class="curso-details-list">
+                                <li><i class="fas fa-money-bill-wave"></i> Grátis</li>
+                                <li><i class="fas fa-clock"></i> 10 horas</li>
+                                <li><i class="fas fa-calendar-alt"></i> Inscrições até 12/04/2026</li>
+                            </ul>
+                            <a href="#" class="curso-link-button">Ver Curso</a>
+                        </div>
+                    </article>
+
+                    <article class="curso-list-card" data-categoria="Beleza, Saúde e Bem Estar" data-cidade="Cacoal">
+                        <div class="curso-card-header">
+                            <div class="curso-info">
+                                <h3 class="curso-title">Design de Sobrancelhas</h3>
+                                <p class="curso-category"><i class="fas fa-eye"></i> Beleza, Saúde e Bem Estar</p>
+                            </div>
+                        </div>
+                        <div class="curso-card-body">
+                            <p class="curso-summary">Técnicas de visagismo, medição e modelagem de sobrancelhas com pinça e linha, para criar um design harmonioso para cada tipo de rosto...</p>
+                            <ul class="curso-details-list">
+                                <li><i class="fas fa-money-bill-wave"></i> Grátis</li>
+                                <li><i class="fas fa-clock"></i> 8 horas</li>
+                                <li><i class="fas fa-calendar-alt"></i> Inscrições até 20/05/2026</li>
+                            </ul>
+                            <a href="#" class="curso-link-button">Ver Curso</a>
+                        </div>
+                    </article>
+
+                    <article class="curso-list-card" data-categoria="Tecnologia" data-cidade="Remoto">
+                        <div class="curso-card-header">
+                            <div class="curso-info">
+                                <h3 class="curso-title">Introdução à Inteligência Artificial</h3>
+                                <p class="curso-category"><i class="fas fa-robot"></i> Tecnologia</p>
+                            </div>
+                        </div>
+                        <div class="curso-card-body">
+                            <p class="curso-summary">Entenda os conceitos fundamentais de Inteligência Artificial e Machine Learning, e descubra como essa tecnologia está transformando o mercado...</p>
+                            <ul class="curso-details-list">
+                                <li><i class="fas fa-money-bill-wave"></i> Grátis</li>
+                                <li><i class="fas fa-clock"></i> 5 horas</li>
+                                <li><i class="fas fa-calendar-alt"></i> Inscrições até 30/06/2026</li>
+                            </ul>
+                            <a href="#" class="curso-link-button">Ver Curso</a>
+                        </div>
+                    </article>
+
+                    <article class="curso-list-card" data-categoria="Marketing e Comunicação" data-cidade="Vilhena">
+                        <div class="curso-card-header">
+                            <div class="curso-info">
+                                <h3 class="curso-title">Fotografia com Celular para Empreendedores</h3>
+                                <p class="curso-category"><i class="fas fa-camera"></i> Marketing e Comunicação</p>
+                            </div>
+                        </div>
+                        <div class="curso-card-body">
+                            <p class="curso-summary">Aprenda a tirar fotos de alta qualidade dos seus produtos usando apenas o celular, melhorando a imagem da sua marca nas redes sociais...</p>
+                            <ul class="curso-details-list">
+                                <li><i class="fas fa-money-bill-wave"></i> Grátis</li>
+                                <li><i class="fas fa-clock"></i> 3 horas</li>
+                                <li><i class="fas fa-calendar-alt"></i> Inscrições até 15/07/2026</li>
+                            </ul>
+                            <a href="#" class="curso-link-button">Ver Curso</a>
+                        </div>
+                    </article>
+
+                    <article class="curso-list-card" data-categoria="Desenvolvimento Pessoal" data-cidade="Online">
+                        <div class="curso-card-header">
+                            <div class="curso-info">
+                                <h3 class="curso-title">Como Montar um Currículo Vencedor</h3>
+                                <p class="curso-category"><i class="fas fa-file-alt"></i> Desenvolvimento Pessoal</p>
+                            </div>
+                        </div>
+                        <div class="curso-card-body">
+                            <p class="curso-summary">Dicas práticas para criar um currículo que se destaque aos olhos dos recrutadores, aumentando suas chances de conseguir uma entrevista...</p>
+                            <ul class="curso-details-list">
+                                <li><i class="fas fa-money-bill-wave"></i> Grátis</li>
+                                <li><i class="fas fa-clock"></i> 1 hora</li>
+                                <li><i class="fas fa-calendar-alt"></i> Inscrições até 01/08/2026</li>
+                            </ul>
+                            <a href="#" class="curso-link-button">Ver Curso</a>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-column footer-branding">
+                        <img src="https://geracaoemprego.ro.gov.br/static/media/logo_header.c6f84656.png" alt="Logo Geração Emprego">
+                        <p class="footer-slogan">A maior plataforma profissional do Estado de Rondônia, conectando talentos e oportunidades.</p>
+                    </div>
+                    <div class="footer-column">
+                        <h3 class="footer-heading">Sobre</h3>
+                        <ul class="footer-links">
+                            <li><a href="#">Termos de Uso</a></li>
+                            <li><a href="#">Políticas de Privacidade</a></li>
+                            <li><a href="#">Perguntas Frequentes</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3 class="footer-heading">Serviços</h3>
+                        <ul class="footer-links">
+                            <li><a href="#">Quero Currículos</a></li>
+                            <li><a href="#">Divulgar Vagas</a></li>
+                            <li><a href="#">Encontrar Cursos</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3 class="footer-heading">Ajuda</h3>
+                        <ul class="footer-links">
+                            <li><a href="#"><i class="fab fa-whatsapp"></i> Fale conosco pelo WhatsApp</a></li>
+                            <li><a href="#"><i class="fas fa-envelope"></i> suporte@geracaoemprego.ro.gov.br</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3 class="footer-heading">Redes Sociais</h3>
+                        <div class="social-media-icons">
+                            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>© 2025 Governo do Estado de Rondônia. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="index.js"></script>
+    <script src="curso.js"></script>
+
+</body>
+</html>
